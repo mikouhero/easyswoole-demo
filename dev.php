@@ -54,7 +54,5 @@ return [
         'USERNAME' => 'mipone@foxmail.com',
         'PASSWORD' => 'abltlnhpmdyfbcga',
     ]
-    
-    
-    
+   
 ];
