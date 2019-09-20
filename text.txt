@@ -1,0 +1,3182 @@
+.
+├── App
+│   ├── HttpController
+│   │   ├── Api
+│   │   │   ├── Admin
+│   │   │   │   ├── AdminBase.php
+│   │   │   │   ├── Auth.php
+│   │   │   │   └── User.php
+│   │   │   ├── ApiBase.php
+│   │   │   ├── Common
+│   │   │   │   ├── Banner.php
+│   │   │   │   └── CommonBase.php
+│   │   │   └── User
+│   │   │       ├── Auth.php
+│   │   │       └── UserBase.php
+│   │   ├── Chat
+│   │   │   ├── Base.php
+│   │   │   ├── Index.php
+│   │   │   ├── Login.php
+│   │   │   └── Register.php
+│   │   ├── Ditest.php
+│   │   ├── Http.php
+│   │   ├── Index.php
+│   │   ├── Process.php
+│   │   ├── Route.php
+│   │   └── Taskone.php
+│   ├── Model
+│   │   ├── Admin
+│   │   │   ├── AdminBean.php
+│   │   │   ├── AdminModel.php
+│   │   │   ├── BannerBean.php
+│   │   │   └── BannerModel.php
+│   │   ├── BaseModel.php
+│   │   └── User
+│   │       ├── UserBean.php
+│   │       └── UserModel.php
+│   ├── Storage
+│   │   ├── ChatMessage.php
+│   │   ├── OnlineUser.php
+│   │   ├── UserBean.php
+│   │   └── UserStorage.php
+│   ├── Task
+│   │   └── BroadcastTask.php
+│   ├── Utility
+│   │   ├── Gravatar.php
+│   │   ├── PlatesRender.php
+│   │   └── ReverseProxyTools.php
+│   ├── Views
+│   │   ├── index.php
+│   │   ├── login.php
+│   │   └── register.php
+│   └── WebSocket
+│       ├── Actions
+│       │   ├── ActionPayload.php
+│       │   └── Broadcast
+│       │       ├── BroadcastAdmin.php
+│       │       └── BroadcastMessage.php
+│       ├── Controller
+│       └── WebSocketAction.php
+├── EasySwooleEvent.php
+├── Log
+│   ├── log.log
+│   └── swoole.log
+├── Static
+│   ├── css
+│   │   ├── login.css
+│   │   └── main.css
+│   ├── images
+│   │   └── bg.jpg
+│   └── script
+│       ├── jquery.min.js
+│       ├── layer.js
+│       └── vue.min.js
+├── Temp
+│   └── pid.pid
+├── composer.json
+├── composer.lock
+├── dev.php
+├── easyswoole
+├── produce.php
+├── text.txt
+└── vendor
+    ├── autoload.php
+    ├── bin
+    │   ├── co-phpunit -> ../easyswoole/phpunit/bin/co-phpunit
+    │   ├── easyswoole -> ../easyswoole/easyswoole/bin/easyswoole
+    │   ├── php-parse -> ../nikic/php-parser/bin/php-parse
+    │   └── phpunit -> ../phpunit/phpunit/phpunit
+    ├── composer
+    │   ├── ClassLoader.php
+    │   ├── LICENSE
+    │   ├── autoload_classmap.php
+    │   ├── autoload_files.php
+    │   ├── autoload_namespaces.php
+    │   ├── autoload_psr4.php
+    │   ├── autoload_real.php
+    │   ├── autoload_static.php
+    │   └── installed.json
+    ├── doctrine
+    │   └── instantiator
+    │       ├── CONTRIBUTING.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       ├── docs
+    │       │   └── en
+    │       │       ├── index.rst
+    │       │       └── sidebar.rst
+    │       ├── phpbench.json
+    │       ├── phpcs.xml.dist
+    │       ├── phpstan.neon.dist
+    │       └── src
+    │           └── Doctrine
+    │               └── Instantiator
+    │                   ├── Exception
+    │                   │   ├── ExceptionInterface.php
+    │                   │   ├── InvalidArgumentException.php
+    │                   │   └── UnexpectedValueException.php
+    │                   ├── Instantiator.php
+    │                   └── InstantiatorInterface.php
+    ├── dragonmantank
+    │   └── cron-expression
+    │       ├── CHANGELOG.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       ├── src
+    │       │   └── Cron
+    │       │       ├── AbstractField.php
+    │       │       ├── CronExpression.php
+    │       │       ├── DayOfMonthField.php
+    │       │       ├── DayOfWeekField.php
+    │       │       ├── FieldFactory.php
+    │       │       ├── FieldInterface.php
+    │       │       ├── HoursField.php
+    │       │       ├── MinutesField.php
+    │       │       └── MonthField.php
+    │       └── tests
+    │           └── Cron
+    │               ├── AbstractFieldTest.php
+    │               ├── CronExpressionTest.php
+    │               ├── DayOfMonthFieldTest.php
+    │               ├── DayOfWeekFieldTest.php
+    │               ├── FieldFactoryTest.php
+    │               ├── HoursFieldTest.php
+    │               ├── MinutesFieldTest.php
+    │               └── MonthFieldTest.php
+    ├── easyswoole
+    │   ├── annotation
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── AbstractAnnotationTag.php
+    │   │   │   ├── Annotation.php
+    │   │   │   ├── Exception.php
+    │   │   │   ├── LineItem.php
+    │   │   │   └── ValueParser.php
+    │   │   └── tests
+    │   │       └── ValueParserTest.php
+    │   ├── atomic-limit
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── AtomicLimit.php
+    │   │       ├── Item.php
+    │   │       └── Process.php
+    │   ├── component
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── AtomicManager.php
+    │   │   │   ├── ChannelManger.php
+    │   │   │   ├── Container.php
+    │   │   │   ├── Context
+    │   │   │   │   ├── ContextItemHandlerInterface.php
+    │   │   │   │   ├── ContextManager.php
+    │   │   │   │   └── Exception
+    │   │   │   │       └── ModifyError.php
+    │   │   │   ├── CoroutineRunner
+    │   │   │   │   ├── Runner.php
+    │   │   │   │   └── Task.php
+    │   │   │   ├── Csp.php
+    │   │   │   ├── Di.php
+    │   │   │   ├── Event.php
+    │   │   │   ├── Invoker.php
+    │   │   │   ├── MultiContainer.php
+    │   │   │   ├── MultiEvent.php
+    │   │   │   ├── Pool
+    │   │   │   │   ├── AbstractPool.php
+    │   │   │   │   ├── AbstractPoolObject.php
+    │   │   │   │   ├── Exception
+    │   │   │   │   │   ├── PoolEmpty.php
+    │   │   │   │   │   ├── PoolException.php
+    │   │   │   │   │   └── PoolObjectNumError.php
+    │   │   │   │   ├── PoolConf.php
+    │   │   │   │   ├── PoolManager.php
+    │   │   │   │   ├── PoolObjectInterface.php
+    │   │   │   │   └── TraitInvoker.php
+    │   │   │   ├── Process
+    │   │   │   │   ├── AbstractProcess.php
+    │   │   │   │   ├── Config.php
+    │   │   │   │   ├── Exception.php
+    │   │   │   │   ├── ProcessHelper.php
+    │   │   │   │   └── Socket
+    │   │   │   │       ├── AbstractTcpProcess.php
+    │   │   │   │       ├── AbstractUnixProcess.php
+    │   │   │   │       ├── TcpProcessConfig.php
+    │   │   │   │       └── UnixProcessConfig.php
+    │   │   │   ├── ReadyScheduler.php
+    │   │   │   ├── Singleton.php
+    │   │   │   ├── SuperClosure.php
+    │   │   │   ├── TableManager.php
+    │   │   │   ├── Timer.php
+    │   │   │   └── WaitGroup.php
+    │   │   └── tests
+    │   │       ├── ContextContextItemHandler.php
+    │   │       ├── ContextTest.php
+    │   │       ├── PoolObject.php
+    │   │       ├── PoolTest.php
+    │   │       └── ReadySchedulerTest.php
+    │   ├── config
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── AbstractConfig.php
+    │   │   │   ├── SplArrayConfig.php
+    │   │   │   └── TableConfig.php
+    │   │   └── tests
+    │   │       ├── SplArrayTest.php
+    │   │       └── TableTest.php
+    │   ├── console
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── Console.php
+    │   │       ├── Help.php
+    │   │       ├── ModuleContainer.php
+    │   │       └── ModuleInterface.php
+    │   ├── easyswoole
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── README.zh-CN.md
+    │   │   ├── bin
+    │   │   │   └── easyswoole
+    │   │   ├── composer.json
+    │   │   ├── easyswoole.png
+    │   │   ├── phpunit.php
+    │   │   ├── src
+    │   │   │   ├── AbstractInterface
+    │   │   │   │   └── Event.php
+    │   │   │   ├── Command
+    │   │   │   │   ├── CommandContainer.php
+    │   │   │   │   ├── CommandInterface.php
+    │   │   │   │   ├── CommandRunner.php
+    │   │   │   │   ├── DefaultCommand
+    │   │   │   │   │   ├── Help.php
+    │   │   │   │   │   ├── Install.php
+    │   │   │   │   │   ├── PhpUnit.php
+    │   │   │   │   │   ├── Reload.php
+    │   │   │   │   │   ├── Start.php
+    │   │   │   │   │   └── Stop.php
+    │   │   │   │   └── Utility.php
+    │   │   │   ├── Config.php
+    │   │   │   ├── Core.php
+    │   │   │   ├── Crontab
+    │   │   │   │   ├── AbstractCronTask.php
+    │   │   │   │   ├── CronRunner.php
+    │   │   │   │   ├── Crontab.php
+    │   │   │   │   └── Exception
+    │   │   │   │       ├── CronTaskNotExist.php
+    │   │   │   │       ├── CronTaskRuleInvalid.php
+    │   │   │   │       └── Exception.php
+    │   │   │   ├── Logger.php
+    │   │   │   ├── Resource
+    │   │   │   │   ├── Config.tpl
+    │   │   │   │   └── EasySwooleEvent.tpl
+    │   │   │   ├── ServerManager.php
+    │   │   │   ├── Swoole
+    │   │   │   │   ├── EventHelper.php
+    │   │   │   │   └── EventRegister.php
+    │   │   │   ├── SysConst.php
+    │   │   │   ├── Task
+    │   │   │   │   └── TaskManager.php
+    │   │   │   └── Trigger.php
+    │   │   └── tests
+    │   │       ├── ConfigTest.php
+    │   │       └── ServerTest.php
+    │   ├── fast-cache
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── Cache.php
+    │   │   │   ├── CacheProcess.php
+    │   │   │   ├── CacheProcessConfig.php
+    │   │   │   ├── Exception
+    │   │   │   │   └── RuntimeError.php
+    │   │   │   ├── Job.php
+    │   │   │   ├── Package.php
+    │   │   │   ├── Protocol.php
+    │   │   │   ├── SyncData.php
+    │   │   │   └── UnixClient.php
+    │   │   └── tests
+    │   │       ├── BuryQueueTest.php
+    │   │       ├── DelayQueueTest.php
+    │   │       ├── FlushBuryQueueTest.php
+    │   │       ├── FlushDelayQueueTest.php
+    │   │       ├── FlushReadyQueueTest.php
+    │   │       ├── FlushReserveQueueTest.php
+    │   │       ├── FlushTest.php
+    │   │       ├── KeysTest.php
+    │   │       ├── KickBuryQueueTest.php
+    │   │       ├── NormalTest.php
+    │   │       ├── QueueSyncDataTest.php
+    │   │       ├── QueueTest.php
+    │   │       ├── ReserveQueueTest.php
+    │   │       ├── SetTest.php
+    │   │       └── process.php
+    │   ├── http
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── AbstractInterface
+    │   │       │   ├── AbstractRouter.php
+    │   │       │   ├── AnnotationController.php
+    │   │       │   ├── AnnotationREST.php
+    │   │       │   ├── Controller.php
+    │   │       │   └── REST.php
+    │   │       ├── Annotation
+    │   │       │   ├── Context.php
+    │   │       │   ├── Di.php
+    │   │       │   ├── Method.php
+    │   │       │   └── Param.php
+    │   │       ├── Dispatcher.php
+    │   │       ├── Exception
+    │   │       │   ├── AnnotationError.php
+    │   │       │   ├── AnnotationMethodNotAllow.php
+    │   │       │   ├── ControllerPoolEmpty.php
+    │   │       │   ├── Exception.php
+    │   │       │   ├── ParamAnnotationError.php
+    │   │       │   ├── ParamAnnotationValidateError.php
+    │   │       │   └── RouterError.php
+    │   │       ├── Message
+    │   │       │   ├── Message.php
+    │   │       │   ├── Request.php
+    │   │       │   ├── Response.php
+    │   │       │   ├── ServerRequest.php
+    │   │       │   ├── Status.php
+    │   │       │   ├── Stream.php
+    │   │       │   ├── UploadFile.php
+    │   │       │   └── Uri.php
+    │   │       ├── Request.php
+    │   │       ├── Response.php
+    │   │       ├── Static
+    │   │       │   ├── 404.html
+    │   │       │   └── welcome.html
+    │   │       ├── UrlParser.php
+    │   │       ├── Utility.php
+    │   │       └── WebService.php
+    │   ├── http-client
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── Bean
+    │   │   │   │   ├── Response.php
+    │   │   │   │   └── Url.php
+    │   │   │   ├── Exception
+    │   │   │   │   └── InvalidUrl.php
+    │   │   │   └── HttpClient.php
+    │   │   └── tests
+    │   │       ├── Test.php
+    │   │       └── index.php
+    │   ├── log
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── Logger.php
+    │   │       └── LoggerInterface.php
+    │   ├── mysqli
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── Config.php
+    │   │       ├── DDLBuilder
+    │   │       │   ├── Blueprints
+    │   │       │   │   ├── ColumnBlueprint.php
+    │   │       │   │   ├── IndexBlueprint.php
+    │   │       │   │   └── TableBlueprint.php
+    │   │       │   ├── DDLBuilder.php
+    │   │       │   └── Enum
+    │   │       │       ├── Character.php
+    │   │       │       ├── DataType.php
+    │   │       │       ├── Engines.php
+    │   │       │       └── IndexType.php
+    │   │       ├── Exceptions
+    │   │       │   ├── ConnectFail.php
+    │   │       │   ├── Exception.php
+    │   │       │   ├── JoinFail.php
+    │   │       │   ├── Option.php
+    │   │       │   ├── OrderByFail.php
+    │   │       │   ├── PrepareQueryFail.php
+    │   │       │   └── WhereParserFail.php
+    │   │       └── Mysqli.php
+    │   ├── mysqli-pool
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── Connection.php
+    │   │   │   ├── Mysql.php
+    │   │   │   └── MysqlPoolException.php
+    │   │   └── tests
+    │   │       └── MysqlTest.php
+    │   ├── phpunit
+    │   │   ├── README.md
+    │   │   ├── bin
+    │   │   │   └── co-phpunit
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       └── Runner.php
+    │   ├── smtp
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── Exception
+    │   │       │   └── Exception.php
+    │   │       ├── Mailer.php
+    │   │       ├── MailerClient.php
+    │   │       ├── MailerConfig.php
+    │   │       └── Message
+    │   │           ├── Html.php
+    │   │           ├── MimeMessageBaseBean.php
+    │   │           └── Text.php
+    │   ├── spl
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── Exception
+    │   │   │   │   └── Exception.php
+    │   │   │   ├── SplArray.php
+    │   │   │   ├── SplBean.php
+    │   │   │   ├── SplDoubleLink.php
+    │   │   │   ├── SplEnum.php
+    │   │   │   ├── SplFileStream.php
+    │   │   │   ├── SplStream.php
+    │   │   │   ├── SplString.php
+    │   │   │   └── StrictArray.php
+    │   │   └── test
+    │   │       ├── BeanTest.php
+    │   │       └── TestBean.php
+    │   ├── task
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── AbstractInterface
+    │   │       │   └── TaskInterface.php
+    │   │       ├── Config.php
+    │   │       ├── Exception
+    │   │       │   └── Exception.php
+    │   │       ├── Package.php
+    │   │       ├── Protocol.php
+    │   │       ├── SuperClosure.php
+    │   │       ├── Task.php
+    │   │       ├── UnixClient.php
+    │   │       └── Worker.php
+    │   ├── template
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   ├── Config.php
+    │   │   │   ├── Protocol.php
+    │   │   │   ├── Render.php
+    │   │   │   ├── RenderInterface.php
+    │   │   │   ├── RenderProcess.php
+    │   │   │   ├── RenderProcessConfig.php
+    │   │   │   └── UnixClient.php
+    │   │   └── tests
+    │   │       ├── Engine
+    │   │       │   ├── Blade.php
+    │   │       │   ├── Plates.php
+    │   │       │   ├── Smarty.php
+    │   │       │   └── Think.php
+    │   │       ├── TemplateCache
+    │   │       ├── TemplateViews
+    │   │       │   ├── blade.blade.php
+    │   │       │   ├── plates.php
+    │   │       │   ├── smarty.tpl
+    │   │       │   └── think.html
+    │   │       └── testServer.php
+    │   ├── trigger
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── Location.php
+    │   │       ├── Trigger.php
+    │   │       └── TriggerInterface.php
+    │   ├── utility
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── ArrayToTextTable.php
+    │   │       ├── File.php
+    │   │       ├── Hash.php
+    │   │       ├── Mime
+    │   │       │   ├── MimeDetector.php
+    │   │       │   └── MimeDetectorException.php
+    │   │       ├── MimeType.php
+    │   │       ├── Random.php
+    │   │       ├── SnowFlake.php
+    │   │       ├── Str.php
+    │   │       └── Time.php
+    │   └── validate
+    │       ├── README.md
+    │       ├── composer.json
+    │       ├── src
+    │       │   ├── Error.php
+    │       │   ├── Rule.php
+    │       │   └── Validate.php
+    │       └── test
+    │           ├── ActiveUrlTest.php
+    │           ├── AllDigitalTest.php
+    │           ├── AlphaTest.php
+    │           ├── BaseTestCase.php
+    │           ├── BetweenLenTest.php
+    │           ├── BetweenTest.php
+    │           ├── BoolTest.php
+    │           ├── DateAfterTest.php
+    │           ├── DateBeforeTest.php
+    │           ├── DifferentTest.php
+    │           ├── DifferentWithColumnTest.php
+    │           ├── EqualTest.php
+    │           ├── EqualWithColumnTest.php
+    │           ├── FloatTest.php
+    │           ├── FuncTest.php
+    │           ├── InArrayTest.php
+    │           ├── IntegerTest.php
+    │           ├── IsIpTest.php
+    │           ├── LengthMaxTest.php
+    │           ├── LengthMinTest.php
+    │           ├── LengthTest.php
+    │           ├── MaxTest.php
+    │           ├── MinTest.php
+    │           ├── NotEmptyTest.php
+    │           ├── NotInArrayTest.php
+    │           ├── NumericTest.php
+    │           ├── RegexTest.php
+    │           ├── RequiredTest.php
+    │           ├── TimestampTest.php
+    │           └── UrlTest.php
+    ├── jeremeamia
+    │   └── superclosure
+    │       ├── LICENSE.md
+    │       ├── composer.json
+    │       └── src
+    │           ├── Analyzer
+    │           │   ├── AstAnalyzer.php
+    │           │   ├── ClosureAnalyzer.php
+    │           │   ├── Token.php
+    │           │   ├── TokenAnalyzer.php
+    │           │   └── Visitor
+    │           │       ├── ClosureLocatorVisitor.php
+    │           │       ├── MagicConstantVisitor.php
+    │           │       └── ThisDetectorVisitor.php
+    │           ├── Exception
+    │           │   ├── ClosureAnalysisException.php
+    │           │   ├── ClosureSerializationException.php
+    │           │   ├── ClosureUnserializationException.php
+    │           │   └── SuperClosureException.php
+    │           ├── SerializableClosure.php
+    │           ├── Serializer.php
+    │           └── SerializerInterface.php
+    ├── league
+    │   └── plates
+    │       ├── CONTRIBUTING.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       ├── docs
+    │       │   ├── CNAME
+    │       │   ├── _data
+    │       │   │   ├── images.yml
+    │       │   │   ├── menu.yml
+    │       │   │   └── project.yml
+    │       │   ├── _layouts
+    │       │   │   └── default.html
+    │       │   ├── apple-touch-icon-precomposed.png
+    │       │   ├── changelog.md
+    │       │   ├── css
+    │       │   │   └── custom.scss
+    │       │   ├── engine
+    │       │   │   ├── extensions.md
+    │       │   │   ├── file-extensions.md
+    │       │   │   ├── folders.md
+    │       │   │   ├── functions.md
+    │       │   │   └── index.md
+    │       │   ├── extensions
+    │       │   │   ├── asset.md
+    │       │   │   └── uri.md
+    │       │   ├── favicon.ico
+    │       │   ├── index.md
+    │       │   ├── installation.md
+    │       │   ├── logo.png
+    │       │   ├── simple-example.md
+    │       │   └── templates
+    │       │       ├── data.md
+    │       │       ├── escaping.md
+    │       │       ├── functions.md
+    │       │       ├── index.md
+    │       │       ├── inheritance.md
+    │       │       ├── layouts.md
+    │       │       ├── nesting.md
+    │       │       ├── sections.md
+    │       │       └── syntax.md
+    │       ├── example
+    │       │   ├── example.php
+    │       │   └── templates
+    │       │       ├── layout.php
+    │       │       ├── profile.php
+    │       │       └── sidebar.php
+    │       ├── phpunit.xml.dist
+    │       └── src
+    │           ├── Engine.php
+    │           ├── Extension
+    │           │   ├── Asset.php
+    │           │   ├── ExtensionInterface.php
+    │           │   └── URI.php
+    │           └── Template
+    │               ├── Data.php
+    │               ├── Directory.php
+    │               ├── FileExtension.php
+    │               ├── Folder.php
+    │               ├── Folders.php
+    │               ├── Func.php
+    │               ├── Functions.php
+    │               ├── Name.php
+    │               └── Template.php
+    ├── myclabs
+    │   └── deep-copy
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       ├── doc
+    │       │   ├── clone.png
+    │       │   ├── deep-clone.png
+    │       │   ├── deep-copy.png
+    │       │   └── graph.png
+    │       └── src
+    │           └── DeepCopy
+    │               ├── DeepCopy.php
+    │               ├── Exception
+    │               │   ├── CloneException.php
+    │               │   └── PropertyException.php
+    │               ├── Filter
+    │               │   ├── Doctrine
+    │               │   │   ├── DoctrineCollectionFilter.php
+    │               │   │   ├── DoctrineEmptyCollectionFilter.php
+    │               │   │   └── DoctrineProxyFilter.php
+    │               │   ├── Filter.php
+    │               │   ├── KeepFilter.php
+    │               │   ├── ReplaceFilter.php
+    │               │   └── SetNullFilter.php
+    │               ├── Matcher
+    │               │   ├── Doctrine
+    │               │   │   └── DoctrineProxyMatcher.php
+    │               │   ├── Matcher.php
+    │               │   ├── PropertyMatcher.php
+    │               │   ├── PropertyNameMatcher.php
+    │               │   └── PropertyTypeMatcher.php
+    │               ├── Reflection
+    │               │   └── ReflectionHelper.php
+    │               ├── TypeFilter
+    │               │   ├── Date
+    │               │   │   └── DateIntervalFilter.php
+    │               │   ├── ReplaceFilter.php
+    │               │   ├── ShallowCopyFilter.php
+    │               │   ├── Spl
+    │               │   │   ├── SplDoublyLinkedList.php
+    │               │   │   └── SplDoublyLinkedListFilter.php
+    │               │   └── TypeFilter.php
+    │               ├── TypeMatcher
+    │               │   └── TypeMatcher.php
+    │               └── deep_copy.php
+    ├── nikic
+    │   ├── fast-route
+    │   │   ├── FastRoute.hhi
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── psalm.xml
+    │   │   ├── src
+    │   │   │   ├── BadRouteException.php
+    │   │   │   ├── DataGenerator
+    │   │   │   │   ├── CharCountBased.php
+    │   │   │   │   ├── GroupCountBased.php
+    │   │   │   │   ├── GroupPosBased.php
+    │   │   │   │   ├── MarkBased.php
+    │   │   │   │   └── RegexBasedAbstract.php
+    │   │   │   ├── DataGenerator.php
+    │   │   │   ├── Dispatcher
+    │   │   │   │   ├── CharCountBased.php
+    │   │   │   │   ├── GroupCountBased.php
+    │   │   │   │   ├── GroupPosBased.php
+    │   │   │   │   ├── MarkBased.php
+    │   │   │   │   └── RegexBasedAbstract.php
+    │   │   │   ├── Dispatcher.php
+    │   │   │   ├── Route.php
+    │   │   │   ├── RouteCollector.php
+    │   │   │   ├── RouteParser
+    │   │   │   │   └── Std.php
+    │   │   │   ├── RouteParser.php
+    │   │   │   ├── bootstrap.php
+    │   │   │   └── functions.php
+    │   │   └── test
+    │   │       ├── Dispatcher
+    │   │       │   ├── CharCountBasedTest.php
+    │   │       │   ├── DispatcherTest.php
+    │   │       │   ├── GroupCountBasedTest.php
+    │   │       │   ├── GroupPosBasedTest.php
+    │   │       │   └── MarkBasedTest.php
+    │   │       ├── HackTypechecker
+    │   │       │   ├── HackTypecheckerTest.php
+    │   │       │   └── fixtures
+    │   │       │       ├── all_options.php
+    │   │       │       ├── empty_options.php
+    │   │       │       └── no_options.php
+    │   │       ├── RouteCollectorTest.php
+    │   │       ├── RouteParser
+    │   │       │   └── StdTest.php
+    │   │       └── bootstrap.php
+    │   └── php-parser
+    │       ├── CHANGELOG.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── UPGRADE-1.0.md
+    │       ├── UPGRADE-2.0.md
+    │       ├── UPGRADE-3.0.md
+    │       ├── UPGRADE-4.0.md
+    │       ├── bin
+    │       │   └── php-parse
+    │       ├── composer.json
+    │       ├── doc
+    │       │   ├── 0_Introduction.markdown
+    │       │   ├── 2_Usage_of_basic_components.markdown
+    │       │   ├── README.md
+    │       │   └── component
+    │       │       ├── AST_builders.markdown
+    │       │       ├── Constant_expression_evaluation.markdown
+    │       │       ├── Error_handling.markdown
+    │       │       ├── FAQ.markdown
+    │       │       ├── JSON_representation.markdown
+    │       │       ├── Lexer.markdown
+    │       │       ├── Name_resolution.markdown
+    │       │       ├── Performance.markdown
+    │       │       ├── Pretty_printing.markdown
+    │       │       └── Walking_the_AST.markdown
+    │       ├── grammar
+    │       │   ├── README.md
+    │       │   ├── parser.template
+    │       │   ├── php5.y
+    │       │   ├── php7.y
+    │       │   ├── rebuildParsers.php
+    │       │   ├── tokens.template
+    │       │   └── tokens.y
+    │       ├── lib
+    │       │   └── PhpParser
+    │       │       ├── Builder
+    │       │       │   ├── Class_.php
+    │       │       │   ├── Declaration.php
+    │       │       │   ├── FunctionLike.php
+    │       │       │   ├── Function_.php
+    │       │       │   ├── Interface_.php
+    │       │       │   ├── Method.php
+    │       │       │   ├── Namespace_.php
+    │       │       │   ├── Param.php
+    │       │       │   ├── Property.php
+    │       │       │   ├── TraitUse.php
+    │       │       │   ├── TraitUseAdaptation.php
+    │       │       │   ├── Trait_.php
+    │       │       │   └── Use_.php
+    │       │       ├── Builder.php
+    │       │       ├── BuilderFactory.php
+    │       │       ├── BuilderHelpers.php
+    │       │       ├── Comment
+    │       │       │   └── Doc.php
+    │       │       ├── Comment.php
+    │       │       ├── ConstExprEvaluationException.php
+    │       │       ├── ConstExprEvaluator.php
+    │       │       ├── Error.php
+    │       │       ├── ErrorHandler
+    │       │       │   ├── Collecting.php
+    │       │       │   └── Throwing.php
+    │       │       ├── ErrorHandler.php
+    │       │       ├── Internal
+    │       │       │   ├── DiffElem.php
+    │       │       │   ├── Differ.php
+    │       │       │   ├── PrintableNewAnonClassNode.php
+    │       │       │   └── TokenStream.php
+    │       │       ├── JsonDecoder.php
+    │       │       ├── Lexer
+    │       │       │   ├── Emulative.php
+    │       │       │   └── TokenEmulator
+    │       │       │       ├── CoaleseEqualTokenEmulator.php
+    │       │       │       ├── FnTokenEmulator.php
+    │       │       │       ├── NumericLiteralSeparatorEmulator.php
+    │       │       │       └── TokenEmulatorInterface.php
+    │       │       ├── Lexer.php
+    │       │       ├── NameContext.php
+    │       │       ├── Node
+    │       │       │   ├── Arg.php
+    │       │       │   ├── Const_.php
+    │       │       │   ├── Expr
+    │       │       │   │   ├── ArrayDimFetch.php
+    │       │       │   │   ├── ArrayItem.php
+    │       │       │   │   ├── Array_.php
+    │       │       │   │   ├── ArrowFunction.php
+    │       │       │   │   ├── Assign.php
+    │       │       │   │   ├── AssignOp
+    │       │       │   │   │   ├── BitwiseAnd.php
+    │       │       │   │   │   ├── BitwiseOr.php
+    │       │       │   │   │   ├── BitwiseXor.php
+    │       │       │   │   │   ├── Coalesce.php
+    │       │       │   │   │   ├── Concat.php
+    │       │       │   │   │   ├── Div.php
+    │       │       │   │   │   ├── Minus.php
+    │       │       │   │   │   ├── Mod.php
+    │       │       │   │   │   ├── Mul.php
+    │       │       │   │   │   ├── Plus.php
+    │       │       │   │   │   ├── Pow.php
+    │       │       │   │   │   ├── ShiftLeft.php
+    │       │       │   │   │   └── ShiftRight.php
+    │       │       │   │   ├── AssignOp.php
+    │       │       │   │   ├── AssignRef.php
+    │       │       │   │   ├── BinaryOp
+    │       │       │   │   │   ├── BitwiseAnd.php
+    │       │       │   │   │   ├── BitwiseOr.php
+    │       │       │   │   │   ├── BitwiseXor.php
+    │       │       │   │   │   ├── BooleanAnd.php
+    │       │       │   │   │   ├── BooleanOr.php
+    │       │       │   │   │   ├── Coalesce.php
+    │       │       │   │   │   ├── Concat.php
+    │       │       │   │   │   ├── Div.php
+    │       │       │   │   │   ├── Equal.php
+    │       │       │   │   │   ├── Greater.php
+    │       │       │   │   │   ├── GreaterOrEqual.php
+    │       │       │   │   │   ├── Identical.php
+    │       │       │   │   │   ├── LogicalAnd.php
+    │       │       │   │   │   ├── LogicalOr.php
+    │       │       │   │   │   ├── LogicalXor.php
+    │       │       │   │   │   ├── Minus.php
+    │       │       │   │   │   ├── Mod.php
+    │       │       │   │   │   ├── Mul.php
+    │       │       │   │   │   ├── NotEqual.php
+    │       │       │   │   │   ├── NotIdentical.php
+    │       │       │   │   │   ├── Plus.php
+    │       │       │   │   │   ├── Pow.php
+    │       │       │   │   │   ├── ShiftLeft.php
+    │       │       │   │   │   ├── ShiftRight.php
+    │       │       │   │   │   ├── Smaller.php
+    │       │       │   │   │   ├── SmallerOrEqual.php
+    │       │       │   │   │   └── Spaceship.php
+    │       │       │   │   ├── BinaryOp.php
+    │       │       │   │   ├── BitwiseNot.php
+    │       │       │   │   ├── BooleanNot.php
+    │       │       │   │   ├── Cast
+    │       │       │   │   │   ├── Array_.php
+    │       │       │   │   │   ├── Bool_.php
+    │       │       │   │   │   ├── Double.php
+    │       │       │   │   │   ├── Int_.php
+    │       │       │   │   │   ├── Object_.php
+    │       │       │   │   │   ├── String_.php
+    │       │       │   │   │   └── Unset_.php
+    │       │       │   │   ├── Cast.php
+    │       │       │   │   ├── ClassConstFetch.php
+    │       │       │   │   ├── Clone_.php
+    │       │       │   │   ├── Closure.php
+    │       │       │   │   ├── ClosureUse.php
+    │       │       │   │   ├── ConstFetch.php
+    │       │       │   │   ├── Empty_.php
+    │       │       │   │   ├── Error.php
+    │       │       │   │   ├── ErrorSuppress.php
+    │       │       │   │   ├── Eval_.php
+    │       │       │   │   ├── Exit_.php
+    │       │       │   │   ├── FuncCall.php
+    │       │       │   │   ├── Include_.php
+    │       │       │   │   ├── Instanceof_.php
+    │       │       │   │   ├── Isset_.php
+    │       │       │   │   ├── List_.php
+    │       │       │   │   ├── MethodCall.php
+    │       │       │   │   ├── New_.php
+    │       │       │   │   ├── PostDec.php
+    │       │       │   │   ├── PostInc.php
+    │       │       │   │   ├── PreDec.php
+    │       │       │   │   ├── PreInc.php
+    │       │       │   │   ├── Print_.php
+    │       │       │   │   ├── PropertyFetch.php
+    │       │       │   │   ├── ShellExec.php
+    │       │       │   │   ├── StaticCall.php
+    │       │       │   │   ├── StaticPropertyFetch.php
+    │       │       │   │   ├── Ternary.php
+    │       │       │   │   ├── UnaryMinus.php
+    │       │       │   │   ├── UnaryPlus.php
+    │       │       │   │   ├── Variable.php
+    │       │       │   │   ├── YieldFrom.php
+    │       │       │   │   └── Yield_.php
+    │       │       │   ├── Expr.php
+    │       │       │   ├── FunctionLike.php
+    │       │       │   ├── Identifier.php
+    │       │       │   ├── Name
+    │       │       │   │   ├── FullyQualified.php
+    │       │       │   │   └── Relative.php
+    │       │       │   ├── Name.php
+    │       │       │   ├── NullableType.php
+    │       │       │   ├── Param.php
+    │       │       │   ├── Scalar
+    │       │       │   │   ├── DNumber.php
+    │       │       │   │   ├── Encapsed.php
+    │       │       │   │   ├── EncapsedStringPart.php
+    │       │       │   │   ├── LNumber.php
+    │       │       │   │   ├── MagicConst
+    │       │       │   │   │   ├── Class_.php
+    │       │       │   │   │   ├── Dir.php
+    │       │       │   │   │   ├── File.php
+    │       │       │   │   │   ├── Function_.php
+    │       │       │   │   │   ├── Line.php
+    │       │       │   │   │   ├── Method.php
+    │       │       │   │   │   ├── Namespace_.php
+    │       │       │   │   │   └── Trait_.php
+    │       │       │   │   ├── MagicConst.php
+    │       │       │   │   └── String_.php
+    │       │       │   ├── Scalar.php
+    │       │       │   ├── Stmt
+    │       │       │   │   ├── Break_.php
+    │       │       │   │   ├── Case_.php
+    │       │       │   │   ├── Catch_.php
+    │       │       │   │   ├── ClassConst.php
+    │       │       │   │   ├── ClassLike.php
+    │       │       │   │   ├── ClassMethod.php
+    │       │       │   │   ├── Class_.php
+    │       │       │   │   ├── Const_.php
+    │       │       │   │   ├── Continue_.php
+    │       │       │   │   ├── DeclareDeclare.php
+    │       │       │   │   ├── Declare_.php
+    │       │       │   │   ├── Do_.php
+    │       │       │   │   ├── Echo_.php
+    │       │       │   │   ├── ElseIf_.php
+    │       │       │   │   ├── Else_.php
+    │       │       │   │   ├── Expression.php
+    │       │       │   │   ├── Finally_.php
+    │       │       │   │   ├── For_.php
+    │       │       │   │   ├── Foreach_.php
+    │       │       │   │   ├── Function_.php
+    │       │       │   │   ├── Global_.php
+    │       │       │   │   ├── Goto_.php
+    │       │       │   │   ├── GroupUse.php
+    │       │       │   │   ├── HaltCompiler.php
+    │       │       │   │   ├── If_.php
+    │       │       │   │   ├── InlineHTML.php
+    │       │       │   │   ├── Interface_.php
+    │       │       │   │   ├── Label.php
+    │       │       │   │   ├── Namespace_.php
+    │       │       │   │   ├── Nop.php
+    │       │       │   │   ├── Property.php
+    │       │       │   │   ├── PropertyProperty.php
+    │       │       │   │   ├── Return_.php
+    │       │       │   │   ├── StaticVar.php
+    │       │       │   │   ├── Static_.php
+    │       │       │   │   ├── Switch_.php
+    │       │       │   │   ├── Throw_.php
+    │       │       │   │   ├── TraitUse.php
+    │       │       │   │   ├── TraitUseAdaptation
+    │       │       │   │   │   ├── Alias.php
+    │       │       │   │   │   └── Precedence.php
+    │       │       │   │   ├── TraitUseAdaptation.php
+    │       │       │   │   ├── Trait_.php
+    │       │       │   │   ├── TryCatch.php
+    │       │       │   │   ├── Unset_.php
+    │       │       │   │   ├── UseUse.php
+    │       │       │   │   ├── Use_.php
+    │       │       │   │   └── While_.php
+    │       │       │   ├── Stmt.php
+    │       │       │   └── VarLikeIdentifier.php
+    │       │       ├── Node.php
+    │       │       ├── NodeAbstract.php
+    │       │       ├── NodeDumper.php
+    │       │       ├── NodeFinder.php
+    │       │       ├── NodeTraverser.php
+    │       │       ├── NodeTraverserInterface.php
+    │       │       ├── NodeVisitor
+    │       │       │   ├── CloningVisitor.php
+    │       │       │   ├── FindingVisitor.php
+    │       │       │   ├── FirstFindingVisitor.php
+    │       │       │   └── NameResolver.php
+    │       │       ├── NodeVisitor.php
+    │       │       ├── NodeVisitorAbstract.php
+    │       │       ├── Parser
+    │       │       │   ├── Multiple.php
+    │       │       │   ├── Php5.php
+    │       │       │   ├── Php7.php
+    │       │       │   └── Tokens.php
+    │       │       ├── Parser.php
+    │       │       ├── ParserAbstract.php
+    │       │       ├── ParserFactory.php
+    │       │       ├── PrettyPrinter
+    │       │       │   └── Standard.php
+    │       │       └── PrettyPrinterAbstract.php
+    │       ├── phpunit.xml.dist
+    │       ├── test
+    │       │   ├── PhpParser
+    │       │   │   ├── Builder
+    │       │   │   │   ├── ClassTest.php
+    │       │   │   │   ├── FunctionTest.php
+    │       │   │   │   ├── InterfaceTest.php
+    │       │   │   │   ├── MethodTest.php
+    │       │   │   │   ├── NamespaceTest.php
+    │       │   │   │   ├── ParamTest.php
+    │       │   │   │   ├── PropertyTest.php
+    │       │   │   │   ├── TraitTest.php
+    │       │   │   │   ├── TraitUseAdaptationTest.php
+    │       │   │   │   ├── TraitUseTest.php
+    │       │   │   │   └── UseTest.php
+    │       │   │   ├── BuilderFactoryTest.php
+    │       │   │   ├── CodeParsingTest.php
+    │       │   │   ├── CodeTestAbstract.php
+    │       │   │   ├── CodeTestParser.php
+    │       │   │   ├── CommentTest.php
+    │       │   │   ├── ConstExprEvaluatorTest.php
+    │       │   │   ├── ErrorHandler
+    │       │   │   │   ├── CollectingTest.php
+    │       │   │   │   └── ThrowingTest.php
+    │       │   │   ├── ErrorTest.php
+    │       │   │   ├── Internal
+    │       │   │   │   └── DifferTest.php
+    │       │   │   ├── JsonDecoderTest.php
+    │       │   │   ├── Lexer
+    │       │   │   │   └── EmulativeTest.php
+    │       │   │   ├── LexerTest.php
+    │       │   │   ├── NameContextTest.php
+    │       │   │   ├── Node
+    │       │   │   │   ├── IdentifierTest.php
+    │       │   │   │   ├── NameTest.php
+    │       │   │   │   ├── Scalar
+    │       │   │   │   │   ├── MagicConstTest.php
+    │       │   │   │   │   └── StringTest.php
+    │       │   │   │   └── Stmt
+    │       │   │   │       ├── ClassConstTest.php
+    │       │   │   │       ├── ClassMethodTest.php
+    │       │   │   │       ├── ClassTest.php
+    │       │   │   │       ├── InterfaceTest.php
+    │       │   │   │       └── PropertyTest.php
+    │       │   │   ├── NodeAbstractTest.php
+    │       │   │   ├── NodeDumperTest.php
+    │       │   │   ├── NodeFinderTest.php
+    │       │   │   ├── NodeTraverserTest.php
+    │       │   │   ├── NodeVisitor
+    │       │   │   │   ├── FindingVisitorTest.php
+    │       │   │   │   ├── FirstFindingVisitorTest.php
+    │       │   │   │   └── NameResolverTest.php
+    │       │   │   ├── Parser
+    │       │   │   │   ├── MultipleTest.php
+    │       │   │   │   ├── Php5Test.php
+    │       │   │   │   └── Php7Test.php
+    │       │   │   ├── ParserFactoryTest.php
+    │       │   │   ├── ParserTest.php
+    │       │   │   └── PrettyPrinterTest.php
+    │       │   ├── bootstrap.php
+    │       │   ├── code
+    │       │   │   ├── formatPreservation
+    │       │   │   │   ├── addingPropertyType.test
+    │       │   │   │   ├── anonClasses.test
+    │       │   │   │   ├── array_spread.test
+    │       │   │   │   ├── arrow_function.test
+    │       │   │   │   ├── basic.test
+    │       │   │   │   ├── blockConversion.test
+    │       │   │   │   ├── comments.test
+    │       │   │   │   ├── emptyListInsertion.test
+    │       │   │   │   ├── fixup.test
+    │       │   │   │   ├── inlineHtml.test
+    │       │   │   │   ├── insertionOfNullable.test
+    │       │   │   │   ├── listInsertion.test
+    │       │   │   │   ├── listInsertionIndentation.test
+    │       │   │   │   ├── listRemoval.test
+    │       │   │   │   ├── modifierChange.test
+    │       │   │   │   ├── nopCommentAtEnd.test
+    │       │   │   │   ├── removalViaNull.test
+    │       │   │   │   ├── removingPropertyType.test
+    │       │   │   │   └── traitAlias.test
+    │       │   │   ├── parser
+    │       │   │   │   ├── blockComments.test
+    │       │   │   │   ├── commentAtEndOfClass.test
+    │       │   │   │   ├── comments.test
+    │       │   │   │   ├── errorHandling
+    │       │   │   │   │   ├── eofError.test
+    │       │   │   │   │   ├── lexerErrors.test
+    │       │   │   │   │   └── recovery.test
+    │       │   │   │   ├── expr
+    │       │   │   │   │   ├── arrayDef.test
+    │       │   │   │   │   ├── arrayDestructuring.test
+    │       │   │   │   │   ├── arraySpread.test
+    │       │   │   │   │   ├── arrow_function.test
+    │       │   │   │   │   ├── assign.test
+    │       │   │   │   │   ├── assignNewByRef.test
+    │       │   │   │   │   ├── cast.test
+    │       │   │   │   │   ├── clone.test
+    │       │   │   │   │   ├── closure.test
+    │       │   │   │   │   ├── comparison.test
+    │       │   │   │   │   ├── constant_expr.test
+    │       │   │   │   │   ├── errorSuppress.test
+    │       │   │   │   │   ├── exit.test
+    │       │   │   │   │   ├── fetchAndCall
+    │       │   │   │   │   │   ├── args.test
+    │       │   │   │   │   │   ├── constFetch.test
+    │       │   │   │   │   │   ├── constantDeref.test
+    │       │   │   │   │   │   ├── funcCall.test
+    │       │   │   │   │   │   ├── newDeref.test
+    │       │   │   │   │   │   ├── objectAccess.test
+    │       │   │   │   │   │   ├── simpleArrayAccess.test
+    │       │   │   │   │   │   ├── staticCall.test
+    │       │   │   │   │   │   └── staticPropertyFetch.test
+    │       │   │   │   │   ├── includeAndEval.test
+    │       │   │   │   │   ├── issetAndEmpty.test
+    │       │   │   │   │   ├── listReferences.test
+    │       │   │   │   │   ├── listWithKeys.test
+    │       │   │   │   │   ├── logic.test
+    │       │   │   │   │   ├── math.test
+    │       │   │   │   │   ├── new.test
+    │       │   │   │   │   ├── newWithoutClass.test
+    │       │   │   │   │   ├── print.test
+    │       │   │   │   │   ├── shellExec.test
+    │       │   │   │   │   ├── ternaryAndCoalesce.test
+    │       │   │   │   │   ├── trailingCommas.test
+    │       │   │   │   │   ├── uvs
+    │       │   │   │   │   │   ├── globalNonSimpleVarError.test
+    │       │   │   │   │   │   ├── indirectCall.test
+    │       │   │   │   │   │   ├── isset.test
+    │       │   │   │   │   │   ├── misc.test
+    │       │   │   │   │   │   ├── new.test
+    │       │   │   │   │   │   └── staticProperty.test
+    │       │   │   │   │   └── variable.test
+    │       │   │   │   ├── nopPositions.test
+    │       │   │   │   ├── scalar
+    │       │   │   │   │   ├── constantString.test
+    │       │   │   │   │   ├── docString.test
+    │       │   │   │   │   ├── docStringNewlines.test
+    │       │   │   │   │   ├── encapsedNegVarOffset.test
+    │       │   │   │   │   ├── encapsedString.test
+    │       │   │   │   │   ├── flexibleDocString.test
+    │       │   │   │   │   ├── flexibleDocStringErrors.test
+    │       │   │   │   │   ├── float.test
+    │       │   │   │   │   ├── int.test
+    │       │   │   │   │   ├── invalidOctal.test
+    │       │   │   │   │   ├── magicConst.test
+    │       │   │   │   │   ├── numberSeparators.test
+    │       │   │   │   │   └── unicodeEscape.test
+    │       │   │   │   ├── semiReserved.test
+    │       │   │   │   └── stmt
+    │       │   │   │       ├── blocklessStatement.test
+    │       │   │   │       ├── class
+    │       │   │   │       │   ├── abstract.test
+    │       │   │   │       │   ├── anonymous.test
+    │       │   │   │       │   ├── conditional.test
+    │       │   │   │       │   ├── constModifierErrors.test
+    │       │   │   │       │   ├── constModifiers.test
+    │       │   │   │       │   ├── final.test
+    │       │   │   │       │   ├── implicitPublic.test
+    │       │   │   │       │   ├── interface.test
+    │       │   │   │       │   ├── modifier.test
+    │       │   │   │       │   ├── name.test
+    │       │   │   │       │   ├── php4Style.test
+    │       │   │   │       │   ├── propertyTypes.test
+    │       │   │   │       │   ├── simple.test
+    │       │   │   │       │   ├── staticMethod.test
+    │       │   │   │       │   └── trait.test
+    │       │   │   │       ├── const.test
+    │       │   │   │       ├── controlFlow.test
+    │       │   │   │       ├── declare.test
+    │       │   │   │       ├── echo.test
+    │       │   │   │       ├── function
+    │       │   │   │       │   ├── builtinTypeDeclarations.test
+    │       │   │   │       │   ├── byRef.test
+    │       │   │   │       │   ├── conditional.test
+    │       │   │   │       │   ├── defaultValues.test
+    │       │   │   │       │   ├── nullableTypes.test
+    │       │   │   │       │   ├── returnTypes.test
+    │       │   │   │       │   ├── specialVars.test
+    │       │   │   │       │   ├── typeDeclarations.test
+    │       │   │   │       │   ├── variadic.test
+    │       │   │   │       │   └── variadicDefaultValue.test
+    │       │   │   │       ├── generator
+    │       │   │   │       │   ├── basic.test
+    │       │   │   │       │   ├── yieldPrecedence.test
+    │       │   │   │       │   └── yieldUnaryPrecedence.test
+    │       │   │   │       ├── haltCompiler.test
+    │       │   │   │       ├── haltCompilerInvalidSyntax.test
+    │       │   │   │       ├── haltCompilerOffset.test
+    │       │   │   │       ├── haltCompilerOutermostScope.test
+    │       │   │   │       ├── hashbang.test
+    │       │   │   │       ├── if.test
+    │       │   │   │       ├── inlineHTML.test
+    │       │   │   │       ├── loop
+    │       │   │   │       │   ├── do.test
+    │       │   │   │       │   ├── for.test
+    │       │   │   │       │   ├── foreach.test
+    │       │   │   │       │   └── while.test
+    │       │   │   │       ├── multiCatch.test
+    │       │   │   │       ├── namespace
+    │       │   │   │       │   ├── alias.test
+    │       │   │   │       │   ├── braced.test
+    │       │   │   │       │   ├── commentAfterNamespace.test
+    │       │   │   │       │   ├── groupUse.test
+    │       │   │   │       │   ├── groupUseErrors.test
+    │       │   │   │       │   ├── groupUsePositions.test
+    │       │   │   │       │   ├── groupUseTrailingComma.test
+    │       │   │   │       │   ├── invalidName.test
+    │       │   │   │       │   ├── mix.test
+    │       │   │   │       │   ├── name.test
+    │       │   │   │       │   ├── nested.test
+    │       │   │   │       │   ├── notBraced.test
+    │       │   │   │       │   ├── nsAfterHashbang.test
+    │       │   │   │       │   ├── outsideStmt.test
+    │       │   │   │       │   └── outsideStmtInvalid.test
+    │       │   │   │       ├── switch.test
+    │       │   │   │       ├── tryCatch.test
+    │       │   │   │       ├── tryWithoutCatch.test
+    │       │   │   │       └── unset.test
+    │       │   │   └── prettyPrinter
+    │       │   │       ├── comments.test
+    │       │   │       ├── commentsInCommaList.test
+    │       │   │       ├── expr
+    │       │   │       │   ├── anonymousClass.test
+    │       │   │       │   ├── arrayDestructuring.test
+    │       │   │       │   ├── arraySpread.test
+    │       │   │       │   ├── arrow_function.test
+    │       │   │       │   ├── call.test
+    │       │   │       │   ├── closure.test
+    │       │   │       │   ├── constant_deref.test
+    │       │   │       │   ├── docStrings.test
+    │       │   │       │   ├── include.test
+    │       │   │       │   ├── intrinsics.test
+    │       │   │       │   ├── list.test
+    │       │   │       │   ├── literals.test
+    │       │   │       │   ├── numbers.test
+    │       │   │       │   ├── operators.test
+    │       │   │       │   ├── parentheses.test
+    │       │   │       │   ├── shortArraySyntax.test
+    │       │   │       │   ├── stringEscaping.test
+    │       │   │       │   ├── uvs.test
+    │       │   │       │   ├── variables.test
+    │       │   │       │   └── yield.test
+    │       │   │       ├── inlineHTMLandPHPtest.file-test
+    │       │   │       ├── nestedInlineHTML.test
+    │       │   │       ├── onlyInlineHTML.file-test
+    │       │   │       ├── onlyPHP.file-test
+    │       │   │       └── stmt
+    │       │   │           ├── alias.test
+    │       │   │           ├── break_continue.test
+    │       │   │           ├── class.test
+    │       │   │           ├── class_const.test
+    │       │   │           ├── const.test
+    │       │   │           ├── declare.test
+    │       │   │           ├── do_while.test
+    │       │   │           ├── for.test
+    │       │   │           ├── foreach.test
+    │       │   │           ├── function_signatures.test
+    │       │   │           ├── global_static_variables.test
+    │       │   │           ├── goto.test
+    │       │   │           ├── groupUse.test
+    │       │   │           ├── haltCompiler.file-test
+    │       │   │           ├── if.test
+    │       │   │           ├── multiCatch.test
+    │       │   │           ├── namespaces.test
+    │       │   │           ├── nullable_types.test
+    │       │   │           ├── properties.test
+    │       │   │           ├── switch.test
+    │       │   │           ├── throw.test
+    │       │   │           ├── traitUse.test
+    │       │   │           ├── tryCatch.test
+    │       │   │           └── while.test
+    │       │   └── updateTests.php
+    │       └── test_old
+    │           ├── run-php-src.sh
+    │           └── run.php
+    ├── phar-io
+    │   ├── manifest
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── composer.lock
+    │   │   ├── examples
+    │   │   │   └── example-01.php
+    │   │   ├── phive.xml
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── ManifestDocumentMapper.php
+    │   │   │   ├── ManifestLoader.php
+    │   │   │   ├── ManifestSerializer.php
+    │   │   │   ├── exceptions
+    │   │   │   │   ├── Exception.php
+    │   │   │   │   ├── InvalidApplicationNameException.php
+    │   │   │   │   ├── InvalidEmailException.php
+    │   │   │   │   ├── InvalidUrlException.php
+    │   │   │   │   ├── ManifestDocumentException.php
+    │   │   │   │   ├── ManifestDocumentMapperException.php
+    │   │   │   │   ├── ManifestElementException.php
+    │   │   │   │   └── ManifestLoaderException.php
+    │   │   │   ├── values
+    │   │   │   │   ├── Application.php
+    │   │   │   │   ├── ApplicationName.php
+    │   │   │   │   ├── Author.php
+    │   │   │   │   ├── AuthorCollection.php
+    │   │   │   │   ├── AuthorCollectionIterator.php
+    │   │   │   │   ├── BundledComponent.php
+    │   │   │   │   ├── BundledComponentCollection.php
+    │   │   │   │   ├── BundledComponentCollectionIterator.php
+    │   │   │   │   ├── CopyrightInformation.php
+    │   │   │   │   ├── Email.php
+    │   │   │   │   ├── Extension.php
+    │   │   │   │   ├── Library.php
+    │   │   │   │   ├── License.php
+    │   │   │   │   ├── Manifest.php
+    │   │   │   │   ├── PhpExtensionRequirement.php
+    │   │   │   │   ├── PhpVersionRequirement.php
+    │   │   │   │   ├── Requirement.php
+    │   │   │   │   ├── RequirementCollection.php
+    │   │   │   │   ├── RequirementCollectionIterator.php
+    │   │   │   │   ├── Type.php
+    │   │   │   │   └── Url.php
+    │   │   │   └── xml
+    │   │   │       ├── AuthorElement.php
+    │   │   │       ├── AuthorElementCollection.php
+    │   │   │       ├── BundlesElement.php
+    │   │   │       ├── ComponentElement.php
+    │   │   │       ├── ComponentElementCollection.php
+    │   │   │       ├── ContainsElement.php
+    │   │   │       ├── CopyrightElement.php
+    │   │   │       ├── ElementCollection.php
+    │   │   │       ├── ExtElement.php
+    │   │   │       ├── ExtElementCollection.php
+    │   │   │       ├── ExtensionElement.php
+    │   │   │       ├── LicenseElement.php
+    │   │   │       ├── ManifestDocument.php
+    │   │   │       ├── ManifestDocumentLoadingException.php
+    │   │   │       ├── ManifestElement.php
+    │   │   │       ├── PhpElement.php
+    │   │   │       └── RequiresElement.php
+    │   │   └── tests
+    │   │       ├── ManifestDocumentMapperTest.php
+    │   │       ├── ManifestLoaderTest.php
+    │   │       ├── ManifestSerializerTest.php
+    │   │       ├── _fixture
+    │   │       │   ├── custom.xml
+    │   │       │   ├── extension-invalidcompatible.xml
+    │   │       │   ├── extension.xml
+    │   │       │   ├── invalidversion.xml
+    │   │       │   ├── invalidversionconstraint.xml
+    │   │       │   ├── library.xml
+    │   │       │   ├── manifest.xml
+    │   │       │   ├── phpunit-5.6.5.xml
+    │   │       │   └── test.phar
+    │   │       ├── exceptions
+    │   │       │   └── ManifestDocumentLoadingExceptionTest.php
+    │   │       ├── values
+    │   │       │   ├── ApplicationNameTest.php
+    │   │       │   ├── ApplicationTest.php
+    │   │       │   ├── AuthorCollectionTest.php
+    │   │       │   ├── AuthorTest.php
+    │   │       │   ├── BundledComponentCollectionTest.php
+    │   │       │   ├── BundledComponentTest.php
+    │   │       │   ├── CopyrightInformationTest.php
+    │   │       │   ├── EmailTest.php
+    │   │       │   ├── ExtensionTest.php
+    │   │       │   ├── LibraryTest.php
+    │   │       │   ├── LicenseTest.php
+    │   │       │   ├── ManifestTest.php
+    │   │       │   ├── PhpExtensionRequirementTest.php
+    │   │       │   ├── PhpVersionRequirementTest.php
+    │   │       │   ├── RequirementCollectionTest.php
+    │   │       │   └── UrlTest.php
+    │   │       └── xml
+    │   │           ├── AuthorElementCollectionTest.php
+    │   │           ├── AuthorElementTest.php
+    │   │           ├── BundlesElementTest.php
+    │   │           ├── ComponentElementCollectionTest.php
+    │   │           ├── ComponentElementTest.php
+    │   │           ├── ContainsElementTest.php
+    │   │           ├── CopyrightElementTest.php
+    │   │           ├── ExtElementCollectionTest.php
+    │   │           ├── ExtElementTest.php
+    │   │           ├── ExtensionElementTest.php
+    │   │           ├── LicenseElementTest.php
+    │   │           ├── ManifestDocumentTest.php
+    │   │           ├── PhpElementTest.php
+    │   │           └── RequiresElementTest.php
+    │   └── version
+    │       ├── CHANGELOG.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── build.xml
+    │       ├── composer.json
+    │       ├── phive.xml
+    │       ├── phpunit.xml
+    │       ├── src
+    │       │   ├── PreReleaseSuffix.php
+    │       │   ├── Version.php
+    │       │   ├── VersionConstraintParser.php
+    │       │   ├── VersionConstraintValue.php
+    │       │   ├── VersionNumber.php
+    │       │   ├── constraints
+    │       │   │   ├── AbstractVersionConstraint.php
+    │       │   │   ├── AndVersionConstraintGroup.php
+    │       │   │   ├── AnyVersionConstraint.php
+    │       │   │   ├── ExactVersionConstraint.php
+    │       │   │   ├── GreaterThanOrEqualToVersionConstraint.php
+    │       │   │   ├── OrVersionConstraintGroup.php
+    │       │   │   ├── SpecificMajorAndMinorVersionConstraint.php
+    │       │   │   ├── SpecificMajorVersionConstraint.php
+    │       │   │   └── VersionConstraint.php
+    │       │   └── exceptions
+    │       │       ├── Exception.php
+    │       │       ├── InvalidPreReleaseSuffixException.php
+    │       │       ├── InvalidVersionException.php
+    │       │       └── UnsupportedVersionConstraintException.php
+    │       └── tests
+    │           ├── Integration
+    │           │   └── VersionConstraintParserTest.php
+    │           └── Unit
+    │               ├── AbstractVersionConstraintTest.php
+    │               ├── AndVersionConstraintGroupTest.php
+    │               ├── AnyVersionConstraintTest.php
+    │               ├── ExactVersionConstraintTest.php
+    │               ├── GreaterThanOrEqualToVersionConstraintTest.php
+    │               ├── OrVersionConstraintGroupTest.php
+    │               ├── PreReleaseSuffixTest.php
+    │               ├── SpecificMajorAndMinorVersionConstraintTest.php
+    │               ├── SpecificMajorVersionConstraintTest.php
+    │               └── VersionTest.php
+    ├── phpdocumentor
+    │   ├── reflection-common
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       ├── Element.php
+    │   │       ├── File.php
+    │   │       ├── Fqsen.php
+    │   │       ├── Location.php
+    │   │       ├── Project.php
+    │   │       └── ProjectFactory.php
+    │   ├── reflection-docblock
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── easy-coding-standard.neon
+    │   │   └── src
+    │   │       ├── DocBlock
+    │   │       │   ├── Description.php
+    │   │       │   ├── DescriptionFactory.php
+    │   │       │   ├── ExampleFinder.php
+    │   │       │   ├── Serializer.php
+    │   │       │   ├── StandardTagFactory.php
+    │   │       │   ├── Tag.php
+    │   │       │   ├── TagFactory.php
+    │   │       │   └── Tags
+    │   │       │       ├── Author.php
+    │   │       │       ├── BaseTag.php
+    │   │       │       ├── Covers.php
+    │   │       │       ├── Deprecated.php
+    │   │       │       ├── Example.php
+    │   │       │       ├── Factory
+    │   │       │       │   ├── StaticMethod.php
+    │   │       │       │   └── Strategy.php
+    │   │       │       ├── Formatter
+    │   │       │       │   ├── AlignFormatter.php
+    │   │       │       │   └── PassthroughFormatter.php
+    │   │       │       ├── Formatter.php
+    │   │       │       ├── Generic.php
+    │   │       │       ├── Link.php
+    │   │       │       ├── Method.php
+    │   │       │       ├── Param.php
+    │   │       │       ├── Property.php
+    │   │       │       ├── PropertyRead.php
+    │   │       │       ├── PropertyWrite.php
+    │   │       │       ├── Reference
+    │   │       │       │   ├── Fqsen.php
+    │   │       │       │   ├── Reference.php
+    │   │       │       │   └── Url.php
+    │   │       │       ├── Return_.php
+    │   │       │       ├── See.php
+    │   │       │       ├── Since.php
+    │   │       │       ├── Source.php
+    │   │       │       ├── Throws.php
+    │   │       │       ├── Uses.php
+    │   │       │       ├── Var_.php
+    │   │       │       └── Version.php
+    │   │       ├── DocBlock.php
+    │   │       ├── DocBlockFactory.php
+    │   │       └── DocBlockFactoryInterface.php
+    │   └── type-resolver
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       └── src
+    │           ├── FqsenResolver.php
+    │           ├── Type.php
+    │           ├── TypeResolver.php
+    │           └── Types
+    │               ├── Array_.php
+    │               ├── Boolean.php
+    │               ├── Callable_.php
+    │               ├── Compound.php
+    │               ├── Context.php
+    │               ├── ContextFactory.php
+    │               ├── Float_.php
+    │               ├── Integer.php
+    │               ├── Iterable_.php
+    │               ├── Mixed_.php
+    │               ├── Null_.php
+    │               ├── Nullable.php
+    │               ├── Object_.php
+    │               ├── Parent_.php
+    │               ├── Resource_.php
+    │               ├── Scalar.php
+    │               ├── Self_.php
+    │               ├── Static_.php
+    │               ├── String_.php
+    │               ├── This.php
+    │               └── Void_.php
+    ├── phpspec
+    │   └── prophecy
+    │       ├── CHANGES.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       └── src
+    │           └── Prophecy
+    │               ├── Argument
+    │               │   ├── ArgumentsWildcard.php
+    │               │   └── Token
+    │               │       ├── AnyValueToken.php
+    │               │       ├── AnyValuesToken.php
+    │               │       ├── ApproximateValueToken.php
+    │               │       ├── ArrayCountToken.php
+    │               │       ├── ArrayEntryToken.php
+    │               │       ├── ArrayEveryEntryToken.php
+    │               │       ├── CallbackToken.php
+    │               │       ├── ExactValueToken.php
+    │               │       ├── IdenticalValueToken.php
+    │               │       ├── LogicalAndToken.php
+    │               │       ├── LogicalNotToken.php
+    │               │       ├── ObjectStateToken.php
+    │               │       ├── StringContainsToken.php
+    │               │       ├── TokenInterface.php
+    │               │       └── TypeToken.php
+    │               ├── Argument.php
+    │               ├── Call
+    │               │   ├── Call.php
+    │               │   └── CallCenter.php
+    │               ├── Comparator
+    │               │   ├── ClosureComparator.php
+    │               │   ├── Factory.php
+    │               │   └── ProphecyComparator.php
+    │               ├── Doubler
+    │               │   ├── CachedDoubler.php
+    │               │   ├── ClassPatch
+    │               │   │   ├── ClassPatchInterface.php
+    │               │   │   ├── DisableConstructorPatch.php
+    │               │   │   ├── HhvmExceptionPatch.php
+    │               │   │   ├── KeywordPatch.php
+    │               │   │   ├── MagicCallPatch.php
+    │               │   │   ├── ProphecySubjectPatch.php
+    │               │   │   ├── ReflectionClassNewInstancePatch.php
+    │               │   │   ├── SplFileInfoPatch.php
+    │               │   │   ├── ThrowablePatch.php
+    │               │   │   └── TraversablePatch.php
+    │               │   ├── DoubleInterface.php
+    │               │   ├── Doubler.php
+    │               │   ├── Generator
+    │               │   │   ├── ClassCodeGenerator.php
+    │               │   │   ├── ClassCreator.php
+    │               │   │   ├── ClassMirror.php
+    │               │   │   ├── Node
+    │               │   │   │   ├── ArgumentNode.php
+    │               │   │   │   ├── ClassNode.php
+    │               │   │   │   └── MethodNode.php
+    │               │   │   ├── ReflectionInterface.php
+    │               │   │   └── TypeHintReference.php
+    │               │   ├── LazyDouble.php
+    │               │   └── NameGenerator.php
+    │               ├── Exception
+    │               │   ├── Call
+    │               │   │   └── UnexpectedCallException.php
+    │               │   ├── Doubler
+    │               │   │   ├── ClassCreatorException.php
+    │               │   │   ├── ClassMirrorException.php
+    │               │   │   ├── ClassNotFoundException.php
+    │               │   │   ├── DoubleException.php
+    │               │   │   ├── DoublerException.php
+    │               │   │   ├── InterfaceNotFoundException.php
+    │               │   │   ├── MethodNotExtendableException.php
+    │               │   │   ├── MethodNotFoundException.php
+    │               │   │   └── ReturnByReferenceException.php
+    │               │   ├── Exception.php
+    │               │   ├── InvalidArgumentException.php
+    │               │   ├── Prediction
+    │               │   │   ├── AggregateException.php
+    │               │   │   ├── FailedPredictionException.php
+    │               │   │   ├── NoCallsException.php
+    │               │   │   ├── PredictionException.php
+    │               │   │   ├── UnexpectedCallsCountException.php
+    │               │   │   └── UnexpectedCallsException.php
+    │               │   └── Prophecy
+    │               │       ├── MethodProphecyException.php
+    │               │       ├── ObjectProphecyException.php
+    │               │       └── ProphecyException.php
+    │               ├── PhpDocumentor
+    │               │   ├── ClassAndInterfaceTagRetriever.php
+    │               │   ├── ClassTagRetriever.php
+    │               │   ├── LegacyClassTagRetriever.php
+    │               │   └── MethodTagRetrieverInterface.php
+    │               ├── Prediction
+    │               │   ├── CallPrediction.php
+    │               │   ├── CallTimesPrediction.php
+    │               │   ├── CallbackPrediction.php
+    │               │   ├── NoCallsPrediction.php
+    │               │   └── PredictionInterface.php
+    │               ├── Promise
+    │               │   ├── CallbackPromise.php
+    │               │   ├── PromiseInterface.php
+    │               │   ├── ReturnArgumentPromise.php
+    │               │   ├── ReturnPromise.php
+    │               │   └── ThrowPromise.php
+    │               ├── Prophecy
+    │               │   ├── MethodProphecy.php
+    │               │   ├── ObjectProphecy.php
+    │               │   ├── ProphecyInterface.php
+    │               │   ├── ProphecySubjectInterface.php
+    │               │   ├── Revealer.php
+    │               │   └── RevealerInterface.php
+    │               ├── Prophet.php
+    │               └── Util
+    │                   ├── ExportUtil.php
+    │                   └── StringUtil.php
+    ├── phpunit
+    │   ├── php-code-coverage
+    │   │   ├── ChangeLog-6.1.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── CodeCoverage.php
+    │   │   │   ├── Driver
+    │   │   │   │   ├── Driver.php
+    │   │   │   │   ├── PHPDBG.php
+    │   │   │   │   └── Xdebug.php
+    │   │   │   ├── Exception
+    │   │   │   │   ├── CoveredCodeNotExecutedException.php
+    │   │   │   │   ├── Exception.php
+    │   │   │   │   ├── InvalidArgumentException.php
+    │   │   │   │   ├── MissingCoversAnnotationException.php
+    │   │   │   │   ├── RuntimeException.php
+    │   │   │   │   └── UnintentionallyCoveredCodeException.php
+    │   │   │   ├── Filter.php
+    │   │   │   ├── Node
+    │   │   │   │   ├── AbstractNode.php
+    │   │   │   │   ├── Builder.php
+    │   │   │   │   ├── Directory.php
+    │   │   │   │   ├── File.php
+    │   │   │   │   └── Iterator.php
+    │   │   │   ├── Report
+    │   │   │   │   ├── Clover.php
+    │   │   │   │   ├── Crap4j.php
+    │   │   │   │   ├── Html
+    │   │   │   │   │   ├── Facade.php
+    │   │   │   │   │   ├── Renderer
+    │   │   │   │   │   │   ├── Dashboard.php
+    │   │   │   │   │   │   ├── Directory.php
+    │   │   │   │   │   │   ├── File.php
+    │   │   │   │   │   │   └── Template
+    │   │   │   │   │   │       ├── coverage_bar.html.dist
+    │   │   │   │   │   │       ├── css
+    │   │   │   │   │   │       │   ├── bootstrap.min.css
+    │   │   │   │   │   │       │   ├── custom.css
+    │   │   │   │   │   │       │   ├── nv.d3.min.css
+    │   │   │   │   │   │       │   ├── octicons.css
+    │   │   │   │   │   │       │   └── style.css
+    │   │   │   │   │   │       ├── dashboard.html.dist
+    │   │   │   │   │   │       ├── directory.html.dist
+    │   │   │   │   │   │       ├── directory_item.html.dist
+    │   │   │   │   │   │       ├── file.html.dist
+    │   │   │   │   │   │       ├── file_item.html.dist
+    │   │   │   │   │   │       ├── icons
+    │   │   │   │   │   │       │   ├── file-code.svg
+    │   │   │   │   │   │       │   └── file-directory.svg
+    │   │   │   │   │   │       ├── js
+    │   │   │   │   │   │       │   ├── bootstrap.min.js
+    │   │   │   │   │   │       │   ├── d3.min.js
+    │   │   │   │   │   │       │   ├── file.js
+    │   │   │   │   │   │       │   ├── jquery.min.js
+    │   │   │   │   │   │       │   ├── nv.d3.min.js
+    │   │   │   │   │   │       │   └── popper.min.js
+    │   │   │   │   │   │       └── method_item.html.dist
+    │   │   │   │   │   └── Renderer.php
+    │   │   │   │   ├── PHP.php
+    │   │   │   │   ├── Text.php
+    │   │   │   │   └── Xml
+    │   │   │   │       ├── BuildInformation.php
+    │   │   │   │       ├── Coverage.php
+    │   │   │   │       ├── Directory.php
+    │   │   │   │       ├── Facade.php
+    │   │   │   │       ├── File.php
+    │   │   │   │       ├── Method.php
+    │   │   │   │       ├── Node.php
+    │   │   │   │       ├── Project.php
+    │   │   │   │       ├── Report.php
+    │   │   │   │       ├── Source.php
+    │   │   │   │       ├── Tests.php
+    │   │   │   │       ├── Totals.php
+    │   │   │   │       └── Unit.php
+    │   │   │   ├── Util.php
+    │   │   │   └── Version.php
+    │   │   └── tests
+    │   │       ├── TestCase.php
+    │   │       ├── _files
+    │   │       │   ├── BankAccount-clover.xml
+    │   │       │   ├── BankAccount-crap4j.xml
+    │   │       │   ├── BankAccount-text.txt
+    │   │       │   ├── BankAccount.php
+    │   │       │   ├── BankAccountTest.php
+    │   │       │   ├── CoverageClassExtendedTest.php
+    │   │       │   ├── CoverageClassTest.php
+    │   │       │   ├── CoverageFunctionParenthesesTest.php
+    │   │       │   ├── CoverageFunctionParenthesesWhitespaceTest.php
+    │   │       │   ├── CoverageFunctionTest.php
+    │   │       │   ├── CoverageMethodOneLineAnnotationTest.php
+    │   │       │   ├── CoverageMethodParenthesesTest.php
+    │   │       │   ├── CoverageMethodParenthesesWhitespaceTest.php
+    │   │       │   ├── CoverageMethodTest.php
+    │   │       │   ├── CoverageNoneTest.php
+    │   │       │   ├── CoverageNotPrivateTest.php
+    │   │       │   ├── CoverageNotProtectedTest.php
+    │   │       │   ├── CoverageNotPublicTest.php
+    │   │       │   ├── CoverageNothingTest.php
+    │   │       │   ├── CoveragePrivateTest.php
+    │   │       │   ├── CoverageProtectedTest.php
+    │   │       │   ├── CoveragePublicTest.php
+    │   │       │   ├── CoverageTwoDefaultClassAnnotations.php
+    │   │       │   ├── CoveredClass.php
+    │   │       │   ├── CoveredFunction.php
+    │   │       │   ├── Crash.php
+    │   │       │   ├── NamespaceCoverageClassExtendedTest.php
+    │   │       │   ├── NamespaceCoverageClassTest.php
+    │   │       │   ├── NamespaceCoverageCoversClassPublicTest.php
+    │   │       │   ├── NamespaceCoverageCoversClassTest.php
+    │   │       │   ├── NamespaceCoverageMethodTest.php
+    │   │       │   ├── NamespaceCoverageNotPrivateTest.php
+    │   │       │   ├── NamespaceCoverageNotProtectedTest.php
+    │   │       │   ├── NamespaceCoverageNotPublicTest.php
+    │   │       │   ├── NamespaceCoveragePrivateTest.php
+    │   │       │   ├── NamespaceCoverageProtectedTest.php
+    │   │       │   ├── NamespaceCoveragePublicTest.php
+    │   │       │   ├── NamespaceCoveredClass.php
+    │   │       │   ├── NotExistingCoveredElementTest.php
+    │   │       │   ├── Report
+    │   │       │   │   ├── HTML
+    │   │       │   │   │   ├── CoverageForBankAccount
+    │   │       │   │   │   │   ├── BankAccount.php.html
+    │   │       │   │   │   │   ├── dashboard.html
+    │   │       │   │   │   │   └── index.html
+    │   │       │   │   │   ├── CoverageForClassWithAnonymousFunction
+    │   │       │   │   │   │   ├── dashboard.html
+    │   │       │   │   │   │   ├── index.html
+    │   │       │   │   │   │   └── source_with_class_and_anonymous_function.php.html
+    │   │       │   │   │   └── CoverageForFileWithIgnoredLines
+    │   │       │   │   │       ├── dashboard.html
+    │   │       │   │   │       ├── index.html
+    │   │       │   │   │       └── source_with_ignore.php.html
+    │   │       │   │   └── XML
+    │   │       │   │       ├── CoverageForBankAccount
+    │   │       │   │       │   ├── BankAccount.php.xml
+    │   │       │   │       │   └── index.xml
+    │   │       │   │       ├── CoverageForClassWithAnonymousFunction
+    │   │       │   │       │   ├── index.xml
+    │   │       │   │       │   └── source_with_class_and_anonymous_function.php.xml
+    │   │       │   │       └── CoverageForFileWithIgnoredLines
+    │   │       │   │           ├── index.xml
+    │   │       │   │           └── source_with_ignore.php.xml
+    │   │       │   ├── class-with-anonymous-function-clover.xml
+    │   │       │   ├── class-with-anonymous-function-crap4j.xml
+    │   │       │   ├── class-with-anonymous-function-text.txt
+    │   │       │   ├── ignored-lines-clover.xml
+    │   │       │   ├── ignored-lines-crap4j.xml
+    │   │       │   ├── ignored-lines-text.txt
+    │   │       │   ├── source_with_class_and_anonymous_function.php
+    │   │       │   ├── source_with_ignore.php
+    │   │       │   ├── source_with_namespace.php
+    │   │       │   ├── source_with_oneline_annotations.php
+    │   │       │   ├── source_without_ignore.php
+    │   │       │   └── source_without_namespace.php
+    │   │       ├── bootstrap.php
+    │   │       └── tests
+    │   │           ├── BuilderTest.php
+    │   │           ├── CloverTest.php
+    │   │           ├── CodeCoverageTest.php
+    │   │           ├── Crap4jTest.php
+    │   │           ├── FilterTest.php
+    │   │           ├── HTMLTest.php
+    │   │           ├── TextTest.php
+    │   │           ├── UtilTest.php
+    │   │           └── XmlTest.php
+    │   ├── php-file-iterator
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Facade.php
+    │   │   │   ├── Factory.php
+    │   │   │   └── Iterator.php
+    │   │   └── tests
+    │   │       └── FactoryTest.php
+    │   ├── php-text-template
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── composer.json
+    │   │   └── src
+    │   │       └── Template.php
+    │   ├── php-timer
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Exception.php
+    │   │   │   ├── RuntimeException.php
+    │   │   │   └── Timer.php
+    │   │   └── tests
+    │   │       └── TimerTest.php
+    │   ├── php-token-stream
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Token
+    │   │   │   │   ├── Stream
+    │   │   │   │   │   └── CachingFactory.php
+    │   │   │   │   ├── Stream.php
+    │   │   │   │   └── Util.php
+    │   │   │   └── Token.php
+    │   │   └── tests
+    │   │       ├── Token
+    │   │       │   ├── ClassTest.php
+    │   │       │   ├── ClosureTest.php
+    │   │       │   ├── FunctionTest.php
+    │   │       │   ├── IncludeTest.php
+    │   │       │   ├── InterfaceTest.php
+    │   │       │   └── NamespaceTest.php
+    │   │       ├── _fixture
+    │   │       │   ├── classExtendsNamespacedClass.php
+    │   │       │   ├── classInNamespace.php
+    │   │       │   ├── classInScopedNamespace.php
+    │   │       │   ├── classUsesNamespacedFunction.php
+    │   │       │   ├── class_with_method_named_empty.php
+    │   │       │   ├── class_with_method_that_declares_anonymous_class.php
+    │   │       │   ├── class_with_method_that_declares_anonymous_class2.php
+    │   │       │   ├── class_with_multiple_anonymous_classes_and_functions.php
+    │   │       │   ├── closure.php
+    │   │       │   ├── issue19.php
+    │   │       │   ├── issue30.php
+    │   │       │   ├── multipleNamespacesWithOneClassUsingBraces.php
+    │   │       │   ├── multipleNamespacesWithOneClassUsingNonBraceSyntax.php
+    │   │       │   ├── php-code-coverage-issue-424.php
+    │   │       │   ├── source.php
+    │   │       │   ├── source2.php
+    │   │       │   ├── source3.php
+    │   │       │   ├── source4.php
+    │   │       │   └── source5.php
+    │   │       └── bootstrap.php
+    │   └── phpunit
+    │       ├── ChangeLog-7.5.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── build.xml
+    │       ├── composer.json
+    │       ├── phive.xml
+    │       ├── phpunit
+    │       ├── phpunit.xml
+    │       ├── phpunit.xsd
+    │       ├── src
+    │       │   ├── Exception.php
+    │       │   ├── Framework
+    │       │   │   ├── Assert
+    │       │   │   │   └── Functions.php
+    │       │   │   ├── Assert.php
+    │       │   │   ├── AssertionFailedError.php
+    │       │   │   ├── CodeCoverageException.php
+    │       │   │   ├── Constraint
+    │       │   │   │   ├── ArrayHasKey.php
+    │       │   │   │   ├── ArraySubset.php
+    │       │   │   │   ├── Attribute.php
+    │       │   │   │   ├── Callback.php
+    │       │   │   │   ├── ClassHasAttribute.php
+    │       │   │   │   ├── ClassHasStaticAttribute.php
+    │       │   │   │   ├── Composite.php
+    │       │   │   │   ├── Constraint.php
+    │       │   │   │   ├── Count.php
+    │       │   │   │   ├── DirectoryExists.php
+    │       │   │   │   ├── Exception.php
+    │       │   │   │   ├── ExceptionCode.php
+    │       │   │   │   ├── ExceptionMessage.php
+    │       │   │   │   ├── ExceptionMessageRegularExpression.php
+    │       │   │   │   ├── FileExists.php
+    │       │   │   │   ├── GreaterThan.php
+    │       │   │   │   ├── IsAnything.php
+    │       │   │   │   ├── IsEmpty.php
+    │       │   │   │   ├── IsEqual.php
+    │       │   │   │   ├── IsFalse.php
+    │       │   │   │   ├── IsFinite.php
+    │       │   │   │   ├── IsIdentical.php
+    │       │   │   │   ├── IsInfinite.php
+    │       │   │   │   ├── IsInstanceOf.php
+    │       │   │   │   ├── IsJson.php
+    │       │   │   │   ├── IsNan.php
+    │       │   │   │   ├── IsNull.php
+    │       │   │   │   ├── IsReadable.php
+    │       │   │   │   ├── IsTrue.php
+    │       │   │   │   ├── IsType.php
+    │       │   │   │   ├── IsWritable.php
+    │       │   │   │   ├── JsonMatches.php
+    │       │   │   │   ├── JsonMatchesErrorMessageProvider.php
+    │       │   │   │   ├── LessThan.php
+    │       │   │   │   ├── LogicalAnd.php
+    │       │   │   │   ├── LogicalNot.php
+    │       │   │   │   ├── LogicalOr.php
+    │       │   │   │   ├── LogicalXor.php
+    │       │   │   │   ├── ObjectHasAttribute.php
+    │       │   │   │   ├── RegularExpression.php
+    │       │   │   │   ├── SameSize.php
+    │       │   │   │   ├── StringContains.php
+    │       │   │   │   ├── StringEndsWith.php
+    │       │   │   │   ├── StringMatchesFormatDescription.php
+    │       │   │   │   ├── StringStartsWith.php
+    │       │   │   │   ├── TraversableContains.php
+    │       │   │   │   └── TraversableContainsOnly.php
+    │       │   │   ├── CoveredCodeNotExecutedException.php
+    │       │   │   ├── DataProviderTestSuite.php
+    │       │   │   ├── Error
+    │       │   │   │   ├── Deprecated.php
+    │       │   │   │   ├── Error.php
+    │       │   │   │   ├── Notice.php
+    │       │   │   │   └── Warning.php
+    │       │   │   ├── Exception.php
+    │       │   │   ├── ExceptionWrapper.php
+    │       │   │   ├── ExpectationFailedException.php
+    │       │   │   ├── IncompleteTest.php
+    │       │   │   ├── IncompleteTestCase.php
+    │       │   │   ├── IncompleteTestError.php
+    │       │   │   ├── InvalidCoversTargetException.php
+    │       │   │   ├── MissingCoversAnnotationException.php
+    │       │   │   ├── MockObject
+    │       │   │   │   ├── Builder
+    │       │   │   │   │   ├── Identity.php
+    │       │   │   │   │   ├── InvocationMocker.php
+    │       │   │   │   │   ├── Match.php
+    │       │   │   │   │   ├── MethodNameMatch.php
+    │       │   │   │   │   ├── NamespaceMatch.php
+    │       │   │   │   │   ├── ParametersMatch.php
+    │       │   │   │   │   └── Stub.php
+    │       │   │   │   ├── Exception
+    │       │   │   │   │   ├── BadMethodCallException.php
+    │       │   │   │   │   ├── Exception.php
+    │       │   │   │   │   └── RuntimeException.php
+    │       │   │   │   ├── ForwardCompatibility
+    │       │   │   │   │   └── MockObject.php
+    │       │   │   │   ├── Generator
+    │       │   │   │   │   ├── deprecation.tpl.dist
+    │       │   │   │   │   ├── mocked_class.tpl.dist
+    │       │   │   │   │   ├── mocked_class_method.tpl.dist
+    │       │   │   │   │   ├── mocked_clone.tpl.dist
+    │       │   │   │   │   ├── mocked_method.tpl.dist
+    │       │   │   │   │   ├── mocked_method_void.tpl.dist
+    │       │   │   │   │   ├── mocked_static_method.tpl.dist
+    │       │   │   │   │   ├── proxied_method.tpl.dist
+    │       │   │   │   │   ├── proxied_method_void.tpl.dist
+    │       │   │   │   │   ├── trait_class.tpl.dist
+    │       │   │   │   │   ├── unmocked_clone.tpl.dist
+    │       │   │   │   │   ├── wsdl_class.tpl.dist
+    │       │   │   │   │   └── wsdl_method.tpl.dist
+    │       │   │   │   ├── Generator.php
+    │       │   │   │   ├── Invocation
+    │       │   │   │   │   ├── Invocation.php
+    │       │   │   │   │   ├── ObjectInvocation.php
+    │       │   │   │   │   └── StaticInvocation.php
+    │       │   │   │   ├── InvocationMocker.php
+    │       │   │   │   ├── Invokable.php
+    │       │   │   │   ├── Matcher
+    │       │   │   │   │   ├── AnyInvokedCount.php
+    │       │   │   │   │   ├── AnyParameters.php
+    │       │   │   │   │   ├── ConsecutiveParameters.php
+    │       │   │   │   │   ├── DeferredError.php
+    │       │   │   │   │   ├── Invocation.php
+    │       │   │   │   │   ├── InvokedAtIndex.php
+    │       │   │   │   │   ├── InvokedAtLeastCount.php
+    │       │   │   │   │   ├── InvokedAtLeastOnce.php
+    │       │   │   │   │   ├── InvokedAtMostCount.php
+    │       │   │   │   │   ├── InvokedCount.php
+    │       │   │   │   │   ├── InvokedRecorder.php
+    │       │   │   │   │   ├── MethodName.php
+    │       │   │   │   │   ├── Parameters.php
+    │       │   │   │   │   └── StatelessInvocation.php
+    │       │   │   │   ├── Matcher.php
+    │       │   │   │   ├── MockBuilder.php
+    │       │   │   │   ├── MockMethod.php
+    │       │   │   │   ├── MockMethodSet.php
+    │       │   │   │   ├── MockObject.php
+    │       │   │   │   ├── Stub
+    │       │   │   │   │   ├── ConsecutiveCalls.php
+    │       │   │   │   │   ├── Exception.php
+    │       │   │   │   │   ├── MatcherCollection.php
+    │       │   │   │   │   ├── ReturnArgument.php
+    │       │   │   │   │   ├── ReturnCallback.php
+    │       │   │   │   │   ├── ReturnReference.php
+    │       │   │   │   │   ├── ReturnSelf.php
+    │       │   │   │   │   ├── ReturnStub.php
+    │       │   │   │   │   └── ReturnValueMap.php
+    │       │   │   │   ├── Stub.php
+    │       │   │   │   └── Verifiable.php
+    │       │   │   ├── OutputError.php
+    │       │   │   ├── RiskyTest.php
+    │       │   │   ├── RiskyTestError.php
+    │       │   │   ├── SelfDescribing.php
+    │       │   │   ├── SkippedTest.php
+    │       │   │   ├── SkippedTestCase.php
+    │       │   │   ├── SkippedTestError.php
+    │       │   │   ├── SkippedTestSuiteError.php
+    │       │   │   ├── SyntheticError.php
+    │       │   │   ├── Test.php
+    │       │   │   ├── TestCase.php
+    │       │   │   ├── TestFailure.php
+    │       │   │   ├── TestListener.php
+    │       │   │   ├── TestListenerDefaultImplementation.php
+    │       │   │   ├── TestResult.php
+    │       │   │   ├── TestSuite.php
+    │       │   │   ├── TestSuiteIterator.php
+    │       │   │   ├── UnintentionallyCoveredCodeError.php
+    │       │   │   ├── Warning.php
+    │       │   │   └── WarningTestCase.php
+    │       │   ├── Runner
+    │       │   │   ├── BaseTestRunner.php
+    │       │   │   ├── Exception.php
+    │       │   │   ├── Filter
+    │       │   │   │   ├── ExcludeGroupFilterIterator.php
+    │       │   │   │   ├── Factory.php
+    │       │   │   │   ├── GroupFilterIterator.php
+    │       │   │   │   ├── IncludeGroupFilterIterator.php
+    │       │   │   │   └── NameFilterIterator.php
+    │       │   │   ├── Hook
+    │       │   │   │   ├── AfterIncompleteTestHook.php
+    │       │   │   │   ├── AfterLastTestHook.php
+    │       │   │   │   ├── AfterRiskyTestHook.php
+    │       │   │   │   ├── AfterSkippedTestHook.php
+    │       │   │   │   ├── AfterSuccessfulTestHook.php
+    │       │   │   │   ├── AfterTestErrorHook.php
+    │       │   │   │   ├── AfterTestFailureHook.php
+    │       │   │   │   ├── AfterTestHook.php
+    │       │   │   │   ├── AfterTestWarningHook.php
+    │       │   │   │   ├── BeforeFirstTestHook.php
+    │       │   │   │   ├── BeforeTestHook.php
+    │       │   │   │   ├── Hook.php
+    │       │   │   │   ├── TestHook.php
+    │       │   │   │   └── TestListenerAdapter.php
+    │       │   │   ├── PhptTestCase.php
+    │       │   │   ├── ResultCacheExtension.php
+    │       │   │   ├── StandardTestSuiteLoader.php
+    │       │   │   ├── TestSuiteLoader.php
+    │       │   │   ├── TestSuiteSorter.php
+    │       │   │   └── Version.php
+    │       │   ├── TextUI
+    │       │   │   ├── Command.php
+    │       │   │   ├── ResultPrinter.php
+    │       │   │   └── TestRunner.php
+    │       │   └── Util
+    │       │       ├── Blacklist.php
+    │       │       ├── Configuration.php
+    │       │       ├── ConfigurationGenerator.php
+    │       │       ├── ErrorHandler.php
+    │       │       ├── FileLoader.php
+    │       │       ├── Filesystem.php
+    │       │       ├── Filter.php
+    │       │       ├── Getopt.php
+    │       │       ├── GlobalState.php
+    │       │       ├── InvalidArgumentHelper.php
+    │       │       ├── Json.php
+    │       │       ├── Log
+    │       │       │   ├── JUnit.php
+    │       │       │   └── TeamCity.php
+    │       │       ├── NullTestResultCache.php
+    │       │       ├── PHP
+    │       │       │   ├── AbstractPhpProcess.php
+    │       │       │   ├── DefaultPhpProcess.php
+    │       │       │   ├── Template
+    │       │       │   │   ├── PhptTestCase.tpl.dist
+    │       │       │   │   ├── TestCaseClass.tpl.dist
+    │       │       │   │   └── TestCaseMethod.tpl.dist
+    │       │       │   ├── WindowsPhpProcess.php
+    │       │       │   └── eval-stdin.php
+    │       │       ├── Printer.php
+    │       │       ├── RegularExpression.php
+    │       │       ├── Test.php
+    │       │       ├── TestDox
+    │       │       │   ├── CliTestDoxPrinter.php
+    │       │       │   ├── HtmlResultPrinter.php
+    │       │       │   ├── NamePrettifier.php
+    │       │       │   ├── ResultPrinter.php
+    │       │       │   ├── TestResult.php
+    │       │       │   ├── TextResultPrinter.php
+    │       │       │   └── XmlResultPrinter.php
+    │       │       ├── TestResultCache.php
+    │       │       ├── TestResultCacheInterface.php
+    │       │       ├── TextTestListRenderer.php
+    │       │       ├── Type.php
+    │       │       ├── XdebugFilterScriptGenerator.php
+    │       │       ├── Xml.php
+    │       │       └── XmlTestListRenderer.php
+    │       └── tests
+    │           ├── _files
+    │           │   ├── 3194.php
+    │           │   ├── 3530.wsdl
+    │           │   ├── AbstractMockTestClass.php
+    │           │   ├── AbstractTest.php
+    │           │   ├── AbstractTrait.php
+    │           │   ├── AnInterface.php
+    │           │   ├── AnInterfaceWithReturnType.php
+    │           │   ├── AnotherInterface.php
+    │           │   ├── ArrayAccessible.php
+    │           │   ├── AssertionExample.php
+    │           │   ├── AssertionExampleTest.php
+    │           │   ├── Author.php
+    │           │   ├── BankAccount.php
+    │           │   ├── BankAccountTest.php
+    │           │   ├── BankAccountTest.test.php
+    │           │   ├── BankAccountTest2.php
+    │           │   ├── Bar.php
+    │           │   ├── BeforeAndAfterTest.php
+    │           │   ├── BeforeClassAndAfterClassTest.php
+    │           │   ├── BeforeClassWithOnlyDataProviderTest.php
+    │           │   ├── Book.php
+    │           │   ├── Calculator.php
+    │           │   ├── ChangeCurrentWorkingDirectoryTest.php
+    │           │   ├── ClassThatImplementsSerializable.php
+    │           │   ├── ClassWithAllPossibleReturnTypes.php
+    │           │   ├── ClassWithNonPublicAttributes.php
+    │           │   ├── ClassWithScalarTypeDeclarations.php
+    │           │   ├── ClassWithSelfTypeHint.php
+    │           │   ├── ClassWithStaticMethod.php
+    │           │   ├── ClassWithToString.php
+    │           │   ├── ClassWithVariadicArgumentMethod.php
+    │           │   ├── ClonedDependencyTest.php
+    │           │   ├── ConcreteTest.my.php
+    │           │   ├── ConcreteTest.php
+    │           │   ├── CountConstraint.php
+    │           │   ├── CoverageClassExtendedTest.php
+    │           │   ├── CoverageClassNothingTest.php
+    │           │   ├── CoverageClassTest.php
+    │           │   ├── CoverageClassWithoutAnnotationsTest.php
+    │           │   ├── CoverageCoversOverridesCoversNothingTest.php
+    │           │   ├── CoverageFunctionParenthesesTest.php
+    │           │   ├── CoverageFunctionParenthesesWhitespaceTest.php
+    │           │   ├── CoverageFunctionTest.php
+    │           │   ├── CoverageMethodNothingCoversMethod.php
+    │           │   ├── CoverageMethodNothingTest.php
+    │           │   ├── CoverageMethodOneLineAnnotationTest.php
+    │           │   ├── CoverageMethodParenthesesTest.php
+    │           │   ├── CoverageMethodParenthesesWhitespaceTest.php
+    │           │   ├── CoverageMethodTest.php
+    │           │   ├── CoverageNamespacedFunctionTest.php
+    │           │   ├── CoverageNoneTest.php
+    │           │   ├── CoverageNotPrivateTest.php
+    │           │   ├── CoverageNotProtectedTest.php
+    │           │   ├── CoverageNotPublicTest.php
+    │           │   ├── CoveragePrivateTest.php
+    │           │   ├── CoverageProtectedTest.php
+    │           │   ├── CoveragePublicTest.php
+    │           │   ├── CoverageTwoDefaultClassAnnotations.php
+    │           │   ├── CoveredClass.php
+    │           │   ├── CoveredFunction.php
+    │           │   ├── CustomPrinter.php
+    │           │   ├── DataProviderDebugTest.php
+    │           │   ├── DataProviderDependencyTest.php
+    │           │   ├── DataProviderFilterTest.php
+    │           │   ├── DataProviderIncompleteTest.php
+    │           │   ├── DataProviderIssue2833
+    │           │   │   ├── FirstTest.php
+    │           │   │   └── SecondTest.php
+    │           │   ├── DataProviderIssue2859
+    │           │   │   ├── phpunit.xml
+    │           │   │   └── tests
+    │           │   │       └── another
+    │           │   │           └── TestWithDataProviderTest.php
+    │           │   ├── DataProviderIssue2922
+    │           │   │   ├── FirstTest.php
+    │           │   │   └── SecondTest.php
+    │           │   ├── DataProviderSkippedTest.php
+    │           │   ├── DataProviderTest.php
+    │           │   ├── DataProviderTestDoxTest.php
+    │           │   ├── DataproviderExecutionOrderTest.php
+    │           │   ├── DataproviderExecutionOrderTest_result_cache.txt
+    │           │   ├── DependencyFailureTest.php
+    │           │   ├── DependencySuccessTest.php
+    │           │   ├── DependencyTestSuite.php
+    │           │   ├── DoNoAssertionTestCase.php
+    │           │   ├── DoesNotPerformAssertionsButPerformingAssertionsTest.php
+    │           │   ├── DoubleTestCase.php
+    │           │   ├── DummyBarTest.php
+    │           │   ├── DummyException.php
+    │           │   ├── DummyFooTest.php
+    │           │   ├── EmptyTestCaseTest.php
+    │           │   ├── ExampleTrait.php
+    │           │   ├── ExceptionInAssertPostConditionsTest.php
+    │           │   ├── ExceptionInAssertPreConditionsTest.php
+    │           │   ├── ExceptionInSetUpTest.php
+    │           │   ├── ExceptionInTearDownAfterClassTest.php
+    │           │   ├── ExceptionInTearDownTest.php
+    │           │   ├── ExceptionInTest.php
+    │           │   ├── ExceptionInTestDetectedInTeardown.php
+    │           │   ├── ExceptionNamespaceTest.php
+    │           │   ├── ExceptionStackTest.php
+    │           │   ├── ExceptionTest.php
+    │           │   ├── ExceptionWithThrowable.php
+    │           │   ├── Failure.php
+    │           │   ├── FailureTest.php
+    │           │   ├── FalsyConstraint.php
+    │           │   ├── FatalTest.php
+    │           │   ├── FinalClass.php
+    │           │   ├── Foo.php
+    │           │   ├── FunctionCallback.php
+    │           │   ├── Go ogle-Sea.rch.wsdl
+    │           │   ├── GoogleSearch.wsdl
+    │           │   ├── IgnoreCodeCoverageClass.php
+    │           │   ├── IgnoreCodeCoverageClassTest.php
+    │           │   ├── IncompleteTest.php
+    │           │   ├── Inheritance
+    │           │   │   ├── InheritanceA.php
+    │           │   │   └── InheritanceB.php
+    │           │   ├── InheritedTestCase.php
+    │           │   ├── IniTest.php
+    │           │   ├── InterfaceWithSemiReservedMethodName.php
+    │           │   ├── InterfaceWithStaticMethod.php
+    │           │   ├── IsolationTest.php
+    │           │   ├── JsonData
+    │           │   │   ├── arrayObject.json
+    │           │   │   └── simpleObject.json
+    │           │   ├── MethodCallback.php
+    │           │   ├── MethodCallbackByReference.php
+    │           │   ├── MockRunner.php
+    │           │   ├── MockTestInterface.php
+    │           │   ├── Mockable.php
+    │           │   ├── MultiDependencyTest.php
+    │           │   ├── MultiDependencyTest_result_cache.txt
+    │           │   ├── MultipleDataProviderTest.php
+    │           │   ├── MyCommand.php
+    │           │   ├── MyTestListener.php
+    │           │   ├── NamedConstraint.php
+    │           │   ├── NamespaceCoverageClassExtendedTest.php
+    │           │   ├── NamespaceCoverageClassTest.php
+    │           │   ├── NamespaceCoverageCoversClassPublicTest.php
+    │           │   ├── NamespaceCoverageCoversClassTest.php
+    │           │   ├── NamespaceCoverageMethodTest.php
+    │           │   ├── NamespaceCoverageNotPrivateTest.php
+    │           │   ├── NamespaceCoverageNotProtectedTest.php
+    │           │   ├── NamespaceCoverageNotPublicTest.php
+    │           │   ├── NamespaceCoveragePrivateTest.php
+    │           │   ├── NamespaceCoverageProtectedTest.php
+    │           │   ├── NamespaceCoveragePublicTest.php
+    │           │   ├── NamespaceCoveredClass.php
+    │           │   ├── NamespaceCoveredFunction.php
+    │           │   ├── NoArgTestCaseTest.php
+    │           │   ├── NoTestCaseClass.php
+    │           │   ├── NoTestCases.php
+    │           │   ├── NonStatic.php
+    │           │   ├── NotExistingCoveredElementTest.php
+    │           │   ├── NotPublicTestCase.php
+    │           │   ├── NotSelfDescribingTest.php
+    │           │   ├── NotVoidTestCase.php
+    │           │   ├── NothingTest.php
+    │           │   ├── NumericGroupAnnotationTest.php
+    │           │   ├── OneTestCase.php
+    │           │   ├── OutputTestCase.php
+    │           │   ├── OverrideTestCase.php
+    │           │   ├── ParseTestMethodAnnotationsMock.php
+    │           │   ├── PartialMockTestClass.php
+    │           │   ├── RequirementsClassBeforeClassHookTest.php
+    │           │   ├── RequirementsClassDocBlockTest.php
+    │           │   ├── RequirementsTest.php
+    │           │   ├── RouterTest.php
+    │           │   ├── SampleArrayAccess.php
+    │           │   ├── SampleClass.php
+    │           │   ├── Singleton.php
+    │           │   ├── SingletonClass.php
+    │           │   ├── SomeClass.php
+    │           │   ├── StackTest.php
+    │           │   ├── StaticMockTestClass.php
+    │           │   ├── StatusTest.php
+    │           │   ├── StopOnErrorTestSuite.php
+    │           │   ├── StopOnWarningTestSuite.php
+    │           │   ├── StopsOnWarningTest.php
+    │           │   ├── StringableClass.php
+    │           │   ├── Struct.php
+    │           │   ├── Success.php
+    │           │   ├── TemplateMethodsTest.php
+    │           │   ├── TestAutoreferenced.php
+    │           │   ├── TestDoxGroupTest.php
+    │           │   ├── TestGeneratorMaker.php
+    │           │   ├── TestIncomplete.php
+    │           │   ├── TestIterator.php
+    │           │   ├── TestIterator2.php
+    │           │   ├── TestIteratorAggregate.php
+    │           │   ├── TestIteratorAggregate2.php
+    │           │   ├── TestProxyFixture.php
+    │           │   ├── TestRisky.php
+    │           │   ├── TestSkipped.php
+    │           │   ├── TestTestError.php
+    │           │   ├── TestWarning.php
+    │           │   ├── TestWithTest.php
+    │           │   ├── TestableCliTestDoxPrinter.php
+    │           │   ├── ThrowExceptionTestCase.php
+    │           │   ├── ThrowNoExceptionTestCase.php
+    │           │   ├── TraitWithConstructor.php
+    │           │   ├── TraversableMockTestInterface.php
+    │           │   ├── TruthyConstraint.php
+    │           │   ├── VariousIterableDataProviderTest.php
+    │           │   ├── WasRun.php
+    │           │   ├── WrapperIteratorAggregate.php
+    │           │   ├── bar.xml
+    │           │   ├── configuration.colors.empty.xml
+    │           │   ├── configuration.colors.false.xml
+    │           │   ├── configuration.colors.invalid.xml
+    │           │   ├── configuration.colors.true.xml
+    │           │   ├── configuration.columns.default.xml
+    │           │   ├── configuration.custom-printer.xml
+    │           │   ├── configuration.defaulttestsuite.xml
+    │           │   ├── configuration.one-file-suite.xml
+    │           │   ├── configuration.suites.xml
+    │           │   ├── configuration.xml
+    │           │   ├── configuration_empty.xml
+    │           │   ├── configuration_execution_order_options.xml
+    │           │   ├── configuration_stop_on_defect.xml
+    │           │   ├── configuration_stop_on_error.xml
+    │           │   ├── configuration_stop_on_incomplete.xml
+    │           │   ├── configuration_stop_on_warning.xml
+    │           │   ├── configuration_whitelist.xml
+    │           │   ├── configuration_xinclude.xml
+    │           │   ├── expectedFileFormat.txt
+    │           │   ├── foo.xml
+    │           │   ├── phpt-for-coverage.phpt
+    │           │   ├── phpt-unsupported-section.phpt
+    │           │   ├── phpt-xfail.phpt
+    │           │   ├── phpunit-example-extension
+    │           │   │   ├── phpunit.xml
+    │           │   │   ├── tests
+    │           │   │   │   └── OneTest.php
+    │           │   │   └── tools
+    │           │   │       └── phpunit.d
+    │           │   │           └── phpunit-example-extension-3.0.3.phar
+    │           │   ├── structureAttributesAreSameButValuesAreNot.xml
+    │           │   ├── structureExpected.xml
+    │           │   ├── structureIgnoreTextNodes.xml
+    │           │   ├── structureIsSameButDataIsNot.xml
+    │           │   ├── structureWrongNumberOfAttributes.xml
+    │           │   └── structureWrongNumberOfNodes.xml
+    │           ├── bootstrap.php
+    │           ├── end-to-end
+    │           │   ├── _files
+    │           │   │   ├── Extension.php
+    │           │   │   ├── HookTest.php
+    │           │   │   ├── NullPrinter.php
+    │           │   │   ├── expect_external.txt
+    │           │   │   ├── hooks.xml
+    │           │   │   ├── phpt-env.expected.txt
+    │           │   │   └── phpt_external.php
+    │           │   ├── abstract-test-class.phpt
+    │           │   ├── assertion.phpt
+    │           │   ├── cache-result.phpt
+    │           │   ├── cli
+    │           │   │   └── test-file-not-found.phpt
+    │           │   ├── code-coverage-ignore.phpt
+    │           │   ├── code-coverage-phpt.phpt
+    │           │   ├── colors-always.phpt
+    │           │   ├── concrete-test-class.phpt
+    │           │   ├── custom-printer-debug.phpt
+    │           │   ├── custom-printer-verbose.phpt
+    │           │   ├── dataprovider-debug.phpt
+    │           │   ├── dataprovider-issue-2833.phpt
+    │           │   ├── dataprovider-issue-2859.phpt
+    │           │   ├── dataprovider-issue-2922.phpt
+    │           │   ├── dataprovider-log-xml-isolation.phpt
+    │           │   ├── dataprovider-log-xml.phpt
+    │           │   ├── dataprovider-testdox.phpt
+    │           │   ├── debug.phpt
+    │           │   ├── default-isolation.phpt
+    │           │   ├── default.phpt
+    │           │   ├── defaulttestsuite-using-testsuite.phpt
+    │           │   ├── defaulttestsuite.phpt
+    │           │   ├── defects-first-order-via-cli.phpt
+    │           │   ├── dependencies-clone.phpt
+    │           │   ├── dependencies-isolation.phpt
+    │           │   ├── dependencies.phpt
+    │           │   ├── dependencies2-isolation.phpt
+    │           │   ├── dependencies2.phpt
+    │           │   ├── dependencies3-isolation.phpt
+    │           │   ├── dependencies3.phpt
+    │           │   ├── disable-code-coverage-ignore.phpt
+    │           │   ├── dump-xdebug-filter.phpt
+    │           │   ├── empty-testcase.phpt
+    │           │   ├── exception-stack.phpt
+    │           │   ├── exclude-group-isolation.phpt
+    │           │   ├── exclude-group.phpt
+    │           │   ├── execution-order-options-via-config.phpt
+    │           │   ├── failure-isolation.phpt
+    │           │   ├── failure-reverse-list.phpt
+    │           │   ├── failure.phpt
+    │           │   ├── fatal-isolation.phpt
+    │           │   ├── filter-class-isolation.phpt
+    │           │   ├── filter-class.phpt
+    │           │   ├── filter-dataprovider-by-classname-and-range-isolation.phpt
+    │           │   ├── filter-dataprovider-by-classname-and-range.phpt
+    │           │   ├── filter-dataprovider-by-number-isolation.phpt
+    │           │   ├── filter-dataprovider-by-number.phpt
+    │           │   ├── filter-dataprovider-by-only-range-isolation.phpt
+    │           │   ├── filter-dataprovider-by-only-range.phpt
+    │           │   ├── filter-dataprovider-by-only-regexp-isolation.phpt
+    │           │   ├── filter-dataprovider-by-only-regexp.phpt
+    │           │   ├── filter-dataprovider-by-only-string-isolation.phpt
+    │           │   ├── filter-dataprovider-by-only-string.phpt
+    │           │   ├── filter-dataprovider-by-range-isolation.phpt
+    │           │   ├── filter-dataprovider-by-range.phpt
+    │           │   ├── filter-dataprovider-by-regexp-isolation.phpt
+    │           │   ├── filter-dataprovider-by-regexp.phpt
+    │           │   ├── filter-dataprovider-by-string-isolation.phpt
+    │           │   ├── filter-dataprovider-by-string.phpt
+    │           │   ├── filter-method-case-insensitive.phpt
+    │           │   ├── filter-method-case-sensitive-no-result.phpt
+    │           │   ├── filter-method-isolation.phpt
+    │           │   ├── filter-method.phpt
+    │           │   ├── filter-no-results.phpt
+    │           │   ├── forward-compatibility.phpt
+    │           │   ├── group-isolation.phpt
+    │           │   ├── group.phpt
+    │           │   ├── help.phpt
+    │           │   ├── help2.phpt
+    │           │   ├── hooks.phpt
+    │           │   ├── ini-isolation.phpt
+    │           │   ├── list-groups.phpt
+    │           │   ├── list-suites.phpt
+    │           │   ├── list-tests-dataprovider.phpt
+    │           │   ├── list-tests-xml-dataprovider.phpt
+    │           │   ├── log-junit-phpt.phpt
+    │           │   ├── log-junit.phpt
+    │           │   ├── log-teamcity-phpt.phpt
+    │           │   ├── log-teamcity.phpt
+    │           │   ├── mock-objects
+    │           │   │   ├── generator
+    │           │   │   │   ├── 232.phpt
+    │           │   │   │   ├── 3154_namespaced_constant_resolving.phpt
+    │           │   │   │   ├── 3530.phpt
+    │           │   │   │   ├── 397.phpt
+    │           │   │   │   ├── abstract_class.phpt
+    │           │   │   │   ├── class.phpt
+    │           │   │   │   ├── class_call_parent_clone.phpt
+    │           │   │   │   ├── class_call_parent_constructor.phpt
+    │           │   │   │   ├── class_dont_call_parent_clone.phpt
+    │           │   │   │   ├── class_dont_call_parent_constructor.phpt
+    │           │   │   │   ├── class_implementing_interface_call_parent_constructor.phpt
+    │           │   │   │   ├── class_implementing_interface_dont_call_parent_constructor.phpt
+    │           │   │   │   ├── class_nonexistent_method.phpt
+    │           │   │   │   ├── class_partial.phpt
+    │           │   │   │   ├── class_with_deprecated_method.phpt
+    │           │   │   │   ├── class_with_final_method.phpt
+    │           │   │   │   ├── class_with_method_named_method.phpt
+    │           │   │   │   ├── class_with_method_with_nullable_typehinted_variadic_arguments.phpt
+    │           │   │   │   ├── class_with_method_with_typehinted_variadic_arguments.phpt
+    │           │   │   │   ├── class_with_method_with_variadic_arguments.phpt
+    │           │   │   │   ├── constant_as_parameter_default_value.phpt
+    │           │   │   │   ├── interface.phpt
+    │           │   │   │   ├── invocation_object_clone_object.phpt
+    │           │   │   │   ├── namespaced_class.phpt
+    │           │   │   │   ├── namespaced_class_call_parent_clone.phpt
+    │           │   │   │   ├── namespaced_class_call_parent_constructor.phpt
+    │           │   │   │   ├── namespaced_class_dont_call_parent_clone.phpt
+    │           │   │   │   ├── namespaced_class_dont_call_parent_constructor.phpt
+    │           │   │   │   ├── namespaced_class_implementing_interface_call_parent_constructor.phpt
+    │           │   │   │   ├── namespaced_class_implementing_interface_dont_call_parent_constructor.phpt
+    │           │   │   │   ├── namespaced_class_partial.phpt
+    │           │   │   │   ├── namespaced_interface.phpt
+    │           │   │   │   ├── nonexistent_class.phpt
+    │           │   │   │   ├── nonexistent_class_with_namespace.phpt
+    │           │   │   │   ├── nonexistent_class_with_namespace_starting_with_separator.phpt
+    │           │   │   │   ├── nullable_types.phpt
+    │           │   │   │   ├── proxy.phpt
+    │           │   │   │   ├── return_type_declarations_closure.phpt
+    │           │   │   │   ├── return_type_declarations_final.phpt
+    │           │   │   │   ├── return_type_declarations_generator.phpt
+    │           │   │   │   ├── return_type_declarations_nullable.phpt
+    │           │   │   │   ├── return_type_declarations_object_method.phpt
+    │           │   │   │   ├── return_type_declarations_parent.phpt
+    │           │   │   │   ├── return_type_declarations_self.phpt
+    │           │   │   │   ├── return_type_declarations_static_method.phpt
+    │           │   │   │   ├── return_type_declarations_void.phpt
+    │           │   │   │   ├── scalar_type_declarations.phpt
+    │           │   │   │   ├── wsdl_class.phpt
+    │           │   │   │   ├── wsdl_class_namespace.phpt
+    │           │   │   │   └── wsdl_class_partial.phpt
+    │           │   │   └── mock-method
+    │           │   │       ├── call_original.phpt
+    │           │   │       ├── call_original_with_argument.phpt
+    │           │   │       ├── call_original_with_argument_variadic.phpt
+    │           │   │       ├── call_original_with_return_type_void.phpt
+    │           │   │       ├── clone_method_arguments.phpt
+    │           │   │       ├── deprecated_with_description.phpt
+    │           │   │       ├── deprecated_without_description.phpt
+    │           │   │       ├── private_method.phpt
+    │           │   │       ├── protected_method.phpt
+    │           │   │       ├── return_by_reference.phpt
+    │           │   │       ├── return_by_reference_with_return_type.phpt
+    │           │   │       ├── return_type.phpt
+    │           │   │       ├── return_type_parent.phpt
+    │           │   │       ├── return_type_self.phpt
+    │           │   │       ├── static_method.phpt
+    │           │   │       ├── static_method_with_return_type.phpt
+    │           │   │       ├── with_argument.phpt
+    │           │   │       ├── with_argument_default.phpt
+    │           │   │       ├── with_argument_default_constant.phpt
+    │           │   │       ├── with_argument_default_null.phpt
+    │           │   │       ├── with_argument_nullable.phpt
+    │           │   │       ├── with_argument_reference.phpt
+    │           │   │       ├── with_argument_typed_array.phpt
+    │           │   │       ├── with_argument_typed_callable.phpt
+    │           │   │       ├── with_argument_typed_class.phpt
+    │           │   │       ├── with_argument_typed_scalar.phpt
+    │           │   │       ├── with_argument_typed_self.phpt
+    │           │   │       ├── with_argument_typed_unkown_class.phpt
+    │           │   │       ├── with_argument_typed_variadic.phpt
+    │           │   │       ├── with_argument_variadic.phpt
+    │           │   │       └── with_arguments.phpt
+    │           │   ├── mycommand.phpt
+    │           │   ├── options-after-arguments.phpt
+    │           │   ├── order-by-default-invalid-via-cli.phpt
+    │           │   ├── output-isolation.phpt
+    │           │   ├── phar-extension-suppressed.phpt
+    │           │   ├── phar-extension.phpt
+    │           │   ├── phpt-args.phpt
+    │           │   ├── phpt-env.phpt
+    │           │   ├── phpt-external.phpt
+    │           │   ├── phpt-parsing.phpt
+    │           │   ├── phpt-stderr.phpt
+    │           │   ├── phpt-stdin.phpt
+    │           │   ├── phpt-xfail.phpt
+    │           │   ├── regression
+    │           │   │   ├── GitHub
+    │           │   │   │   ├── 1149
+    │           │   │   │   │   └── Issue1149Test.php
+    │           │   │   │   ├── 1149.phpt
+    │           │   │   │   ├── 1216
+    │           │   │   │   │   ├── Issue1216Test.php
+    │           │   │   │   │   ├── bootstrap1216.php
+    │           │   │   │   │   └── phpunit1216.xml
+    │           │   │   │   ├── 1216.phpt
+    │           │   │   │   ├── 1265
+    │           │   │   │   │   ├── Issue1265Test.php
+    │           │   │   │   │   └── phpunit1265.xml
+    │           │   │   │   ├── 1265.phpt
+    │           │   │   │   ├── 1330
+    │           │   │   │   │   ├── Issue1330Test.php
+    │           │   │   │   │   └── phpunit1330.xml
+    │           │   │   │   ├── 1330.phpt
+    │           │   │   │   ├── 1335
+    │           │   │   │   │   ├── Issue1335Test.php
+    │           │   │   │   │   └── bootstrap1335.php
+    │           │   │   │   ├── 1335.phpt
+    │           │   │   │   ├── 1337
+    │           │   │   │   │   └── Issue1337Test.php
+    │           │   │   │   ├── 1337.phpt
+    │           │   │   │   ├── 1348
+    │           │   │   │   │   └── Issue1348Test.php
+    │           │   │   │   ├── 1348.phpt
+    │           │   │   │   ├── 1351
+    │           │   │   │   │   ├── ChildProcessClass1351.php
+    │           │   │   │   │   └── Issue1351Test.php
+    │           │   │   │   ├── 1351.phpt
+    │           │   │   │   ├── 1374
+    │           │   │   │   │   └── Issue1374Test.php
+    │           │   │   │   ├── 1374.phpt
+    │           │   │   │   ├── 1437
+    │           │   │   │   │   └── Issue1437Test.php
+    │           │   │   │   ├── 1437.phpt
+    │           │   │   │   ├── 1468
+    │           │   │   │   │   └── Issue1468Test.php
+    │           │   │   │   ├── 1468.phpt
+    │           │   │   │   ├── 1471
+    │           │   │   │   │   └── Issue1471Test.php
+    │           │   │   │   ├── 1471.phpt
+    │           │   │   │   ├── 1472
+    │           │   │   │   │   └── Issue1472Test.php
+    │           │   │   │   ├── 1472.phpt
+    │           │   │   │   ├── 1570
+    │           │   │   │   │   └── Issue1570Test.php
+    │           │   │   │   ├── 1570.phpt
+    │           │   │   │   ├── 2085
+    │           │   │   │   │   ├── Issue2085Test.php
+    │           │   │   │   │   └── configuration_enforce_time_limit_options.xml
+    │           │   │   │   ├── 2085-enforce-time-limit-options-via-config-without-invoker.phpt
+    │           │   │   │   ├── 2085-without-invoker.phpt
+    │           │   │   │   ├── 2085.phpt
+    │           │   │   │   ├── 2137
+    │           │   │   │   │   └── Issue2137Test.php
+    │           │   │   │   ├── 2137-filter.phpt
+    │           │   │   │   ├── 2137-no_filter.phpt
+    │           │   │   │   ├── 2145
+    │           │   │   │   │   └── Issue2145Test.php
+    │           │   │   │   ├── 2145.phpt
+    │           │   │   │   ├── 2158
+    │           │   │   │   │   ├── Issue2158Test.php
+    │           │   │   │   │   └── constant.inc
+    │           │   │   │   ├── 2158.phpt
+    │           │   │   │   ├── 2366
+    │           │   │   │   │   └── Issue2366Test.php
+    │           │   │   │   ├── 2366.phpt
+    │           │   │   │   ├── 2380
+    │           │   │   │   │   └── Issue2380Test.php
+    │           │   │   │   ├── 2380.phpt
+    │           │   │   │   ├── 2382
+    │           │   │   │   │   └── Issue2382Test.php
+    │           │   │   │   ├── 2382.phpt
+    │           │   │   │   ├── 2435
+    │           │   │   │   │   └── Issue2435Test.php
+    │           │   │   │   ├── 2435.phpt
+    │           │   │   │   ├── 244
+    │           │   │   │   │   └── Issue244Test.php
+    │           │   │   │   ├── 244.phpt
+    │           │   │   │   ├── 2448
+    │           │   │   │   │   └── Test.php
+    │           │   │   │   ├── 2448-existing-test.phpt
+    │           │   │   │   ├── 2448-not-existing-test.phpt
+    │           │   │   │   ├── 2724
+    │           │   │   │   │   └── SeparateClassRunMethodInNewProcessTest.php
+    │           │   │   │   ├── 2724-diff-pid-from-master-process.phpt
+    │           │   │   │   ├── 2725
+    │           │   │   │   │   └── BeforeAfterClassPidTest.php
+    │           │   │   │   ├── 2725-separate-class-before-after-pid.phpt
+    │           │   │   │   ├── 2731
+    │           │   │   │   │   └── Issue2731Test.php
+    │           │   │   │   ├── 2731.phpt
+    │           │   │   │   ├── 2811
+    │           │   │   │   │   └── Issue2811Test.php
+    │           │   │   │   ├── 2811.phpt
+    │           │   │   │   ├── 2830
+    │           │   │   │   │   └── Issue2830Test.php
+    │           │   │   │   ├── 2830.phpt
+    │           │   │   │   ├── 2972
+    │           │   │   │   │   ├── issue-2972-test.phpt
+    │           │   │   │   │   └── unconventiallyNamedIssue2972Test.php
+    │           │   │   │   ├── 2972.phpt
+    │           │   │   │   ├── 3093
+    │           │   │   │   │   ├── Issue3093Test.php
+    │           │   │   │   │   └── issue-3093-test.phpt
+    │           │   │   │   ├── 3107
+    │           │   │   │   │   ├── Issue3107Test.php
+    │           │   │   │   │   └── issue-3107-test.phpt
+    │           │   │   │   ├── 3156
+    │           │   │   │   │   └── Issue3156Test.php
+    │           │   │   │   ├── 322
+    │           │   │   │   │   ├── Issue322Test.php
+    │           │   │   │   │   └── phpunit322.xml
+    │           │   │   │   ├── 322.phpt
+    │           │   │   │   ├── 3364
+    │           │   │   │   │   ├── issue-3364-test.phpt
+    │           │   │   │   │   └── tests
+    │           │   │   │   │       ├── Issue3364SetupBeforeClassTest.php
+    │           │   │   │   │       └── Issue3364SetupTest.php
+    │           │   │   │   ├── 3379
+    │           │   │   │   │   ├── Issue3379Test.php
+    │           │   │   │   │   ├── Issue3379TestListener.php
+    │           │   │   │   │   └── phpunit.xml
+    │           │   │   │   ├── 3379.phpt
+    │           │   │   │   ├── 3380
+    │           │   │   │   │   └── issue-3380-test.phpt
+    │           │   │   │   ├── 3396
+    │           │   │   │   │   └── issue-3396-test.phpt
+    │           │   │   │   ├── 433
+    │           │   │   │   │   └── Issue433Test.php
+    │           │   │   │   ├── 433.phpt
+    │           │   │   │   ├── 445
+    │           │   │   │   │   └── Issue445Test.php
+    │           │   │   │   ├── 445.phpt
+    │           │   │   │   ├── 498
+    │           │   │   │   │   └── Issue498Test.php
+    │           │   │   │   ├── 498.phpt
+    │           │   │   │   ├── 503
+    │           │   │   │   │   └── Issue503Test.php
+    │           │   │   │   ├── 503.phpt
+    │           │   │   │   ├── 581
+    │           │   │   │   │   └── Issue581Test.php
+    │           │   │   │   ├── 581.phpt
+    │           │   │   │   ├── 74
+    │           │   │   │   │   ├── Issue74Test.php
+    │           │   │   │   │   └── NewException.php
+    │           │   │   │   ├── 74.phpt
+    │           │   │   │   ├── 765
+    │           │   │   │   │   └── Issue765Test.php
+    │           │   │   │   ├── 765.phpt
+    │           │   │   │   ├── 797
+    │           │   │   │   │   ├── Issue797Test.php
+    │           │   │   │   │   └── bootstrap797.php
+    │           │   │   │   ├── 797.phpt
+    │           │   │   │   ├── 863.phpt
+    │           │   │   │   ├── 873
+    │           │   │   │   │   └── Issue873Test.php
+    │           │   │   │   └── 873.phpt
+    │           │   │   └── Trac
+    │           │   │       ├── 1021
+    │           │   │       │   └── Issue1021Test.php
+    │           │   │       ├── 1021.phpt
+    │           │   │       ├── 523
+    │           │   │       │   └── Issue523Test.php
+    │           │   │       ├── 523.phpt
+    │           │   │       ├── 578
+    │           │   │       │   └── Issue578Test.php
+    │           │   │       ├── 578.phpt
+    │           │   │       ├── 684
+    │           │   │       │   └── Issue684Test.php
+    │           │   │       ├── 684.phpt
+    │           │   │       ├── 783
+    │           │   │       │   ├── ChildSuite.php
+    │           │   │       │   ├── OneTest.php
+    │           │   │       │   ├── ParentSuite.php
+    │           │   │       │   └── TwoTest.php
+    │           │   │       └── 783.phpt
+    │           │   ├── repeat.phpt
+    │           │   ├── report-tests-performing-assertions-when-annotated-with-does-not-perform-assertions.phpt
+    │           │   ├── report-useless-tests-incomplete.phpt
+    │           │   ├── report-useless-tests-isolation.phpt
+    │           │   ├── report-useless-tests.phpt
+    │           │   ├── stop-on-defect-via-cli.phpt
+    │           │   ├── stop-on-defect-via-config.phpt
+    │           │   ├── stop-on-error-via-cli.phpt
+    │           │   ├── stop-on-error-via-config.phpt
+    │           │   ├── stop-on-incomplete-via-cli.phpt
+    │           │   ├── stop-on-incomplete-via-config.phpt
+    │           │   ├── stop-on-warning-via-cli.phpt
+    │           │   ├── stop-on-warning-via-config.phpt
+    │           │   ├── teamcity-inner-exceptions.phpt
+    │           │   ├── teamcity.phpt
+    │           │   ├── test-order-randomized-seed-with-dependency-resolution.phpt
+    │           │   ├── test-order-randomized-with-dependency-resolution.phpt
+    │           │   ├── test-order-reversed-with-dependency-resolution.phpt
+    │           │   ├── test-order-reversed-without-dependency-resolution.phpt
+    │           │   ├── test-suffix-multiple.phpt
+    │           │   ├── test-suffix-single.phpt
+    │           │   ├── testdox-dataprovider-placeholder.phpt
+    │           │   ├── testdox-exclude-group.phpt
+    │           │   ├── testdox-group.phpt
+    │           │   ├── testdox-html.phpt
+    │           │   ├── testdox-text.phpt
+    │           │   ├── testdox-verbose.phpt
+    │           │   ├── testdox-xml.phpt
+    │           │   └── testdox.phpt
+    │           ├── fail
+    │           │   └── fail.phpt
+    │           └── unit
+    │               ├── Framework
+    │               │   ├── AssertTest.php
+    │               │   ├── Constraint
+    │               │   │   ├── ArrayHasKeyTest.php
+    │               │   │   ├── ArraySubsetTest.php
+    │               │   │   ├── AttributeTest.php
+    │               │   │   ├── CallbackTest.php
+    │               │   │   ├── ClassHasAttributeTest.php
+    │               │   │   ├── ClassHasStaticAttributeTest.php
+    │               │   │   ├── ConstraintTestCase.php
+    │               │   │   ├── CountTest.php
+    │               │   │   ├── DirectoryExistsTest.php
+    │               │   │   ├── ExceptionMessageRegExpTest.php
+    │               │   │   ├── ExceptionMessageTest.php
+    │               │   │   ├── FileExistsTest.php
+    │               │   │   ├── GreaterThanTest.php
+    │               │   │   ├── IsEmptyTest.php
+    │               │   │   ├── IsEqualTest.php
+    │               │   │   ├── IsIdenticalTest.php
+    │               │   │   ├── IsInstanceOfTest.php
+    │               │   │   ├── IsJsonTest.php
+    │               │   │   ├── IsNullTest.php
+    │               │   │   ├── IsReadableTest.php
+    │               │   │   ├── IsTypeTest.php
+    │               │   │   ├── IsWritableTest.php
+    │               │   │   ├── JsonMatchesErrorMessageProviderTest.php
+    │               │   │   ├── JsonMatchesTest.php
+    │               │   │   ├── LessThanTest.php
+    │               │   │   ├── LogicalAndTest.php
+    │               │   │   ├── LogicalOrTest.php
+    │               │   │   ├── LogicalXorTest.php
+    │               │   │   ├── ObjectHasAttributeTest.php
+    │               │   │   ├── RegularExpressionTest.php
+    │               │   │   ├── SameSizeTest.php
+    │               │   │   ├── StringContainsTest.php
+    │               │   │   ├── StringEndsWithTest.php
+    │               │   │   ├── StringMatchesFormatDescriptionTest.php
+    │               │   │   ├── StringStartsWithTest.php
+    │               │   │   └── TraversableContainsTest.php
+    │               │   ├── ConstraintTest.php
+    │               │   ├── ExceptionWrapperTest.php
+    │               │   ├── MockObject
+    │               │   │   ├── Builder
+    │               │   │   │   └── InvocationMockerTest.php
+    │               │   │   ├── GeneratorTest.php
+    │               │   │   ├── Invocation
+    │               │   │   │   ├── ObjectInvocationTest.php
+    │               │   │   │   └── StaticInvocationTest.php
+    │               │   │   ├── Matcher
+    │               │   │   │   └── ConsecutiveParametersTest.php
+    │               │   │   ├── MockBuilderTest.php
+    │               │   │   ├── MockMethodTest.php
+    │               │   │   ├── MockObjectTest.php
+    │               │   │   └── ProxyObjectTest.php
+    │               │   ├── TestCaseTest.php
+    │               │   ├── TestFailureTest.php
+    │               │   ├── TestImplementorTest.php
+    │               │   ├── TestListenerTest.php
+    │               │   ├── TestResultTest.php
+    │               │   └── TestSuiteTest.php
+    │               ├── Runner
+    │               │   ├── Filter
+    │               │   │   └── NameFilterIteratorTest.php
+    │               │   ├── PhptTestCaseTest.php
+    │               │   ├── ResultCacheExtensionTest.php
+    │               │   └── TestSuiteSorterTest.php
+    │               ├── TextUI
+    │               │   └── TestRunnerTest.php
+    │               └── Util
+    │                   ├── ConfigurationGeneratorTest.php
+    │                   ├── ConfigurationTest.php
+    │                   ├── GetoptTest.php
+    │                   ├── GlobalStateTest.php
+    │                   ├── JsonTest.php
+    │                   ├── NullTestResultCacheTest.php
+    │                   ├── PHP
+    │                   │   └── AbstractPhpProcessTest.php
+    │                   ├── RegularExpressionTest.php
+    │                   ├── TestDox
+    │                   │   ├── CliTestDoxPrinterTest.php
+    │                   │   └── NamePrettifierTest.php
+    │                   ├── TestResultCacheTest.php
+    │                   ├── TestTest.php
+    │                   ├── XDebugFilterScriptGeneratorTest.php
+    │                   └── XmlTest.php
+    ├── psr
+    │   └── http-message
+    │       ├── CHANGELOG.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       └── src
+    │           ├── MessageInterface.php
+    │           ├── RequestInterface.php
+    │           ├── ResponseInterface.php
+    │           ├── ServerRequestInterface.php
+    │           ├── StreamInterface.php
+    │           ├── UploadedFileInterface.php
+    │           └── UriInterface.php
+    ├── sebastian
+    │   ├── code-unit-reverse-lookup
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   └── Wizard.php
+    │   │   └── tests
+    │   │       └── WizardTest.php
+    │   ├── comparator
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── ArrayComparator.php
+    │   │   │   ├── Comparator.php
+    │   │   │   ├── ComparisonFailure.php
+    │   │   │   ├── DOMNodeComparator.php
+    │   │   │   ├── DateTimeComparator.php
+    │   │   │   ├── DoubleComparator.php
+    │   │   │   ├── ExceptionComparator.php
+    │   │   │   ├── Factory.php
+    │   │   │   ├── MockObjectComparator.php
+    │   │   │   ├── NumericComparator.php
+    │   │   │   ├── ObjectComparator.php
+    │   │   │   ├── ResourceComparator.php
+    │   │   │   ├── ScalarComparator.php
+    │   │   │   ├── SplObjectStorageComparator.php
+    │   │   │   └── TypeComparator.php
+    │   │   └── tests
+    │   │       ├── ArrayComparatorTest.php
+    │   │       ├── ComparisonFailureTest.php
+    │   │       ├── DOMNodeComparatorTest.php
+    │   │       ├── DateTimeComparatorTest.php
+    │   │       ├── DoubleComparatorTest.php
+    │   │       ├── ExceptionComparatorTest.php
+    │   │       ├── FactoryTest.php
+    │   │       ├── MockObjectComparatorTest.php
+    │   │       ├── NumericComparatorTest.php
+    │   │       ├── ObjectComparatorTest.php
+    │   │       ├── ResourceComparatorTest.php
+    │   │       ├── ScalarComparatorTest.php
+    │   │       ├── SplObjectStorageComparatorTest.php
+    │   │       ├── TypeComparatorTest.php
+    │   │       └── _fixture
+    │   │           ├── Author.php
+    │   │           ├── Book.php
+    │   │           ├── ClassWithToString.php
+    │   │           ├── SampleClass.php
+    │   │           ├── Struct.php
+    │   │           ├── TestClass.php
+    │   │           └── TestClassComparator.php
+    │   ├── diff
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Chunk.php
+    │   │   │   ├── Diff.php
+    │   │   │   ├── Differ.php
+    │   │   │   ├── Exception
+    │   │   │   │   ├── ConfigurationException.php
+    │   │   │   │   ├── Exception.php
+    │   │   │   │   └── InvalidArgumentException.php
+    │   │   │   ├── Line.php
+    │   │   │   ├── LongestCommonSubsequenceCalculator.php
+    │   │   │   ├── MemoryEfficientLongestCommonSubsequenceCalculator.php
+    │   │   │   ├── Output
+    │   │   │   │   ├── AbstractChunkOutputBuilder.php
+    │   │   │   │   ├── DiffOnlyOutputBuilder.php
+    │   │   │   │   ├── DiffOutputBuilderInterface.php
+    │   │   │   │   ├── StrictUnifiedDiffOutputBuilder.php
+    │   │   │   │   └── UnifiedDiffOutputBuilder.php
+    │   │   │   ├── Parser.php
+    │   │   │   └── TimeEfficientLongestCommonSubsequenceCalculator.php
+    │   │   └── tests
+    │   │       ├── ChunkTest.php
+    │   │       ├── DiffTest.php
+    │   │       ├── DifferTest.php
+    │   │       ├── Exception
+    │   │       │   ├── ConfigurationExceptionTest.php
+    │   │       │   └── InvalidArgumentExceptionTest.php
+    │   │       ├── LineTest.php
+    │   │       ├── LongestCommonSubsequenceTest.php
+    │   │       ├── MemoryEfficientImplementationTest.php
+    │   │       ├── Output
+    │   │       │   ├── AbstractChunkOutputBuilderTest.php
+    │   │       │   ├── DiffOnlyOutputBuilderTest.php
+    │   │       │   ├── Integration
+    │   │       │   │   ├── StrictUnifiedDiffOutputBuilderIntegrationTest.php
+    │   │       │   │   └── UnifiedDiffOutputBuilderIntegrationTest.php
+    │   │       │   ├── StrictUnifiedDiffOutputBuilderDataProvider.php
+    │   │       │   ├── StrictUnifiedDiffOutputBuilderTest.php
+    │   │       │   ├── UnifiedDiffOutputBuilderDataProvider.php
+    │   │       │   └── UnifiedDiffOutputBuilderTest.php
+    │   │       ├── ParserTest.php
+    │   │       ├── TimeEfficientImplementationTest.php
+    │   │       ├── Utils
+    │   │       │   ├── FileUtils.php
+    │   │       │   ├── UnifiedDiffAssertTrait.php
+    │   │       │   ├── UnifiedDiffAssertTraitIntegrationTest.php
+    │   │       │   └── UnifiedDiffAssertTraitTest.php
+    │   │       └── fixtures
+    │   │           ├── UnifiedDiffAssertTraitIntegrationTest
+    │   │           │   ├── 1_a.txt
+    │   │           │   ├── 1_b.txt
+    │   │           │   ├── 2_a.txt
+    │   │           │   └── 2_b.txt
+    │   │           ├── out
+    │   │           ├── patch.txt
+    │   │           ├── patch2.txt
+    │   │           └── serialized_diff.bin
+    │   ├── environment
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Console.php
+    │   │   │   ├── OperatingSystem.php
+    │   │   │   └── Runtime.php
+    │   │   └── tests
+    │   │       ├── ConsoleTest.php
+    │   │       ├── OperatingSystemTest.php
+    │   │       └── RuntimeTest.php
+    │   ├── exporter
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   └── Exporter.php
+    │   │   └── tests
+    │   │       └── ExporterTest.php
+    │   ├── global-state
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Blacklist.php
+    │   │   │   ├── CodeExporter.php
+    │   │   │   ├── Restorer.php
+    │   │   │   ├── Snapshot.php
+    │   │   │   └── exceptions
+    │   │   │       ├── Exception.php
+    │   │   │       └── RuntimeException.php
+    │   │   └── tests
+    │   │       ├── BlacklistTest.php
+    │   │       ├── CodeExporterTest.php
+    │   │       ├── RestorerTest.php
+    │   │       ├── SnapshotTest.php
+    │   │       └── _fixture
+    │   │           ├── BlacklistedChildClass.php
+    │   │           ├── BlacklistedClass.php
+    │   │           ├── BlacklistedImplementor.php
+    │   │           ├── BlacklistedInterface.php
+    │   │           ├── SnapshotClass.php
+    │   │           ├── SnapshotDomDocument.php
+    │   │           ├── SnapshotFunctions.php
+    │   │           └── SnapshotTrait.php
+    │   ├── object-enumerator
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Enumerator.php
+    │   │   │   ├── Exception.php
+    │   │   │   └── InvalidArgumentException.php
+    │   │   └── tests
+    │   │       ├── EnumeratorTest.php
+    │   │       └── _fixture
+    │   │           └── ExceptionThrower.php
+    │   ├── object-reflector
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Exception.php
+    │   │   │   ├── InvalidArgumentException.php
+    │   │   │   └── ObjectReflector.php
+    │   │   └── tests
+    │   │       ├── ObjectReflectorTest.php
+    │   │       └── _fixture
+    │   │           ├── ChildClass.php
+    │   │           ├── ClassWithIntegerAttributeName.php
+    │   │           └── ParentClass.php
+    │   ├── recursion-context
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── phpunit.xml
+    │   │   ├── src
+    │   │   │   ├── Context.php
+    │   │   │   ├── Exception.php
+    │   │   │   └── InvalidArgumentException.php
+    │   │   └── tests
+    │   │       └── ContextTest.php
+    │   ├── resource-operations
+    │   │   ├── ChangeLog.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── build
+    │   │   │   └── generate.php
+    │   │   ├── build.xml
+    │   │   ├── composer.json
+    │   │   ├── src
+    │   │   │   └── ResourceOperations.php
+    │   │   └── tests
+    │   │       └── ResourceOperationsTest.php
+    │   └── version
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── composer.json
+    │       └── src
+    │           └── Version.php
+    ├── symfony
+    │   ├── polyfill-ctype
+    │   │   ├── Ctype.php
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── bootstrap.php
+    │   │   └── composer.json
+    │   ├── polyfill-php56
+    │   │   ├── LICENSE
+    │   │   ├── Php56.php
+    │   │   ├── README.md
+    │   │   ├── bootstrap.php
+    │   │   └── composer.json
+    │   └── polyfill-util
+    │       ├── Binary.php
+    │       ├── BinaryNoFuncOverload.php
+    │       ├── BinaryOnFuncOverload.php
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── TestListener.php
+    │       ├── TestListenerForV5.php
+    │       ├── TestListenerForV6.php
+    │       ├── TestListenerForV7.php
+    │       ├── TestListenerTrait.php
+    │       └── composer.json
+    ├── theseer
+    │   └── tokenizer
+    │       ├── CHANGELOG.md
+    │       ├── LICENSE
+    │       ├── README.md
+    │       ├── build.xml
+    │       ├── composer.json
+    │       ├── phive.xml
+    │       ├── phpunit.xml
+    │       ├── src
+    │       │   ├── Exception.php
+    │       │   ├── NamespaceUri.php
+    │       │   ├── NamespaceUriException.php
+    │       │   ├── Token.php
+    │       │   ├── TokenCollection.php
+    │       │   ├── TokenCollectionException.php
+    │       │   ├── Tokenizer.php
+    │       │   └── XMLSerializer.php
+    │       └── tests
+    │           ├── NamespaceUriTest.php
+    │           ├── TokenCollectionTest.php
+    │           ├── TokenTest.php
+    │           ├── TokenizerTest.php
+    │           ├── XMLSerializerTest.php
+    │           └── _files
+    │               ├── customns.xml
+    │               ├── empty.xml
+    │               ├── test.php
+    │               ├── test.php.tokens
+    │               └── test.php.xml
+    └── webmozart
+        └── assert
+            ├── CHANGELOG.md
+            ├── LICENSE
+            ├── README.md
+            ├── ci
+            │   └── composer.json
+            ├── composer.json
+            ├── psalm.xml
+            └── src
+                └── Assert.php
+
+502 directories, 2677 files
