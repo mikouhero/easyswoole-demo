@@ -18,6 +18,7 @@ class BroadcastMessage extends ActionPayload
     protected $content;
     protected $type;
     protected $sendTime;
+    protected $userId;
 
     public function getFromUserFd()
     {
@@ -47,6 +48,12 @@ class BroadcastMessage extends ActionPayload
     public function setSendTime($sendTime):void
     {
         $this->sendTime = $sendTime;
+    }
+
+
+    public function setUserId($userId):void
+    {
+        $this->userId = $userId;
     }
 }
 

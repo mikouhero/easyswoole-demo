@@ -11,14 +11,17 @@ use App\Task\BroadcastTask;
 use App\WebSocket\Actions\Broadcast\BroadcastMessage;
 use EasySwoole\EasySwoole\Task\TaskManager;
 use EasySwoole\Socket\AbstractInterface\Controller;
+use App\Storage\OnlineUser;
 
-class Broadcast extends Controller
+class Broadcast extends Base
 {
 
     public function roomBroadcast()
     {
         $client = $this->caller()->getClient();
+        
         $broadcastPayload = $this->caller()->getArgs();
+  
         if (!empty($broadcastPayload) && isset($broadcastPayload['content'])) {
 
             $message = new BroadcastMessage();
@@ -27,6 +30,10 @@ class Broadcast extends Controller
             $message->setType($broadcastPayload['type']);
             $message->setSendTime(date('Y-m-d H:i:s'));
 
+            $info = $this->currentUser();
+            $message->setUserId($info['userId']);
+
+            // var_dump($userinfo);
 //            $this->response()->setMessage($message);
             TaskManager::getInstance()->async(new BroadcastTask([
                 'payload'   => $message->__toString(),

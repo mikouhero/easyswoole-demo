@@ -73,7 +73,7 @@ class Auth extends UserBase
         $result = $userModel->logout($this->getWho());
         if ($result) {
             // 重置 UserBean 属性
-            $this->getWho()->restore();
+            // $this->getWho()->restore(); 
             // 将用户标识对象置空
             $this->who = null;
             $this->writeJson(Status::CODE_OK,'','success');

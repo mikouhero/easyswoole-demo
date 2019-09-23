@@ -16,22 +16,41 @@ use App\WebSocket\Actions\User\UserInRoom;
 use App\WebSocket\Actions\User\UserOutRoom;
 use EasySwoole\EasySwoole\Task\TaskManager;
 use EasySwoole\Utility\Random;
+use App\Model\User\UserModel;
+use EasySwoole\MysqliPool\Mysql;
 
 class WebSocketEvents
 {
+
+
     static function onOpen(\swoole_websocket_server $server, \swoole_http_request $request)
     {
         $fd = $request->fd;
-        if (isset($request->get['username']) && !empty($request->get['username'])) {
-            $username = $request->get['username'];
-            $avatar = Gravatar::makeGravatar($username . '@swoole.com');
-        } else {
-            $random = Random::character(8);
-            $avatar = Gravatar::makeGravatar($random . '@swloole.com');
-            $username = '神秘乘客' . $random;
+     
+        $sessionKey =$request->cookie['userSession'];
+        
+        if (empty($sessionKey)) {
+            $sessionKey =$request->post['userSession'];
         }
+
+        $db = Mysql::defer('mysql');
+        $userModel = new UserModel($db);
+
+        $userinfo = $userModel->getOneBySession($sessionKey);
+        
+        $username = $userinfo->getUserName();
+        $avatar = $userinfo->getUserAvatar() ?? Gravatar::makeGravatar($username.'@swoole.com');
+        $userId = $userinfo->getUserId();
+        // if (isset($request->get['username']) && !empty($request->get['username'])) {
+        //     $username = $request->get['username'];
+        //     $avatar = Gravatar::makeGravatar($username . '@swoole.com');
+        // } else {
+        //     $random = Random::character(8);
+        //     $avatar = Gravatar::makeGravatar($random . '@swloole.com');
+        //     $username = '神秘乘客' . $random;
+        // }
         // 插入在线用户表
-        OnlineUser::getInstance()->set($fd, $username, $avatar);
+        OnlineUser::getInstance()->set($fd, $username, $avatar,$userId);
 
 //        $table = OnlineUser::getInstance()->table();
 //        foreach($table as $row)
@@ -43,9 +62,10 @@ class WebSocketEvents
         // 发送广播
         $userInRoomMessage = new UserInRoom();
         $userInRoomMessage->setInfo([
-            'fd' => $fd,
-            'avatar' => $avatar,
-            'username' => $username,
+            'fd'        => $fd,
+            'avatar'    => $avatar,
+            'username'  => $username,
+            'userId'    => $userId,
         ]);
 
         TaskManager::getInstance()->async(new BroadcastTask([

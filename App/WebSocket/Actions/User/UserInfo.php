@@ -17,6 +17,7 @@ class UserInfo extends ActionPayload
     protected $intro;
     protected $userFd;
     protected $avatar;
+    protected $userId;
 
     public function getUsername()
     {
@@ -56,5 +57,15 @@ class UserInfo extends ActionPayload
     public function setAvatar($avatar):void
     {
         $this->avatar = $avatar;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId($userId):void
+    {
+        $this->userId = $userId;
     }
 }

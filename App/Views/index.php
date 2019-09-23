@@ -68,7 +68,7 @@
                             <div v-if="chat.sendTime" class="chat-tips">
                                 <span class="am-radius" style="color: #666666">{{chat.sendTime}}</span>
                             </div>
-                            <article class="am-comment" :class="{ 'am-comment-flip' : chat.fd == currentUser.fd }">
+                            <article class="am-comment" :class="{ 'am-comment-flip' : chat.userId == currentUser.userId }">
 
                                 <a href="#link-to-user-home">
                                     <img :src="chat.avatar" alt="" class="am-comment-avatar"
@@ -132,7 +132,7 @@
             ReconnectTimer   : null,
             HeartBeatTimer   : null,
             ReconnectBox     : null,
-            currentUser      : {username: '-----', intro: '-----------', fd: 0, avatar: 0},
+            currentUser      : {username: '-----', intro: '-----------', fd: 0, avatar: 0,userId:0},
             roomUser         : {},
             roomChat         : [],
             up_recv_time     : 0
@@ -191,8 +191,10 @@
                     type: "get",
                     success: function (resp) {
                        if (resp.code == 200) {
-                            console.log(resp);
-                            othis.connect();
+                           othis.currentUser.username = resp.result.userName;
+                           othis.currentUser.fd = resp.result.userAccount;
+                           othis.currentUser.userId = resp.result.userId;
+                           othis.connect();
                        }else{
                           
                         window.location.href="/chat/login";
@@ -200,7 +202,7 @@
                        }
                     },
                     error:function (e) {
-                        console.log(e)
+                        // console.log(e)
                         alert(e.responseJSON.msg);
                         window.location.href="/chat/login";
 
@@ -210,11 +212,11 @@
             },
             connect              : function () {
                 var othis = this;
-                var username = localStorage.getItem('username');
+                // var username = localStorage.getItem('username');
                 var websocketServer = this.websocketServer;
-                if (username) {
-                    websocketServer += '?username=' + encodeURIComponent(username)
-                }
+                // if (username) {
+                    // websocketServer += '?username=' + encodeURIComponent(username)
+                // }
                 this.websocketInstance = new WebSocket(websocketServer);
                 this.websocketInstance.onopen = function (ev) {
                     // 断线重连处理
@@ -231,7 +233,7 @@
                     othis.release('index', 'info');
                     othis.release('index', 'online');
                     othis.websocketInstance.onmessage = function (ev) {
-                        console.log(ev.data);
+                        // console.log(ev.data);
                         try {
                             var data = JSON.parse(ev.data);
                             if (data.sendTime) {
@@ -259,11 +261,13 @@
                                     var broadcastMsg = {
                                         type    : data.type,
                                         fd      : data.fromUserFd,
+                                        userId  : data.userId,
                                         content : data.content,
                                         avatar  : othis.roomUser['user' + data.fromUserFd].avatar,
                                         username: othis.roomUser['user' + data.fromUserFd].username,
                                         sendTime: data.sendTime
                                     };
+                                    // console.log(broadcastMsg)
                                     othis.roomChat.push(broadcastMsg);
                                     break;
                                 }
@@ -272,6 +276,7 @@
                                     var lastMsg = {
                                         type    : data.type,
                                         fd      : data.fromUserFd,
+                                        userId  : data.userId,
                                         content : data.content,
                                         avatar  : data.avatar,
                                         username: data.username,
@@ -281,10 +286,12 @@
                                     break;
                                 }
                                 case 201: {
+                                    console.log(data)
                                     // 刷新自己的用户信息
                                     othis.currentUser.intro = data.intro;
                                     othis.currentUser.avatar = data.avatar;
                                     othis.currentUser.fd = data.userFd;
+                                    // othis.currentUser.userId = data.userId;
                                     othis.currentUser.username = data.username;
                                     break;
                                 }
@@ -314,7 +321,7 @@
                                 }
                             }
                         } catch (e) {
-                            console.log(e.data);
+                            // console.log(e.data);
                             // console.warn(e);
                         }
                     };
@@ -351,7 +358,7 @@
                 action = action || 'action';
                 params = params || {};
                 var message = {controller: controller, action: action, params: params}
-                console.log(message);
+                // console.log(message);
                 this.websocketInstance.send(JSON.stringify(message))
             },
             /**

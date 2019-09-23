@@ -9,7 +9,7 @@ use EasySwoole\Component\Singleton;
 use EasySwoole\Component\TableManager;
 use Swoole\Table;
 
-class OnlineUser
+class OnlineUser 
 {
     use Singleton;
     protected  $table ;
@@ -21,6 +21,7 @@ class OnlineUser
     {
         TableManager::getInstance()->add('onlineUsers',[
             'fd'                => ['type' => Table::TYPE_INT, 'size' => 8],
+            'userId'            => ['type' => Table::TYPE_INT,'size' => 8],
             'avatar'            => ['type' => Table::TYPE_STRING,'size' => 128],
             'username'          => ['type' => Table::TYPE_STRING,'size' =>128],
             'last_heartbeat'    => ['type' => Table::TYPE_INT,'size' => 4]
@@ -28,13 +29,14 @@ class OnlineUser
         $this->table = TableManager::getInstance()->get('onlineUsers');
     }
 
-    public function set($fd,$username,$avatar)
+    public function set($fd,$username,$avatar,$userId)
     {
         return $this->table->set($fd,[
             'fd'                => $fd,
             'avatar'            => $avatar,
             'username'          => $username,
-            'last_heartbeat'    =>time()
+            'userId'           => $userId,
+            'last_heartbeat'    => time()
         ]);
     }
 
